@@ -1,9 +1,9 @@
-//: TMA1Question3.cpp
+//: TMA1Question4.cpp
 
 /* 
- Title: TMA1Question3.cpp
- Description: 
- Date: August 14, 2021
+ Title: TMA1Question4.cpp
+ Description: Detect prime numbers from 1 to 10,000
+ Date: August 15, 2021
  Author: Kynan Ware
  Student ID: 3431123
  Execution: ./TMA1Question3.exe
@@ -55,22 +55,25 @@
  
 */
 
-#include <vector> // Vector declarations
-#include <iostream> // Stream declarations 
+#include <iostream>
 using namespace std;
 
 int main(void) {
-	vector<float> vec1, vec2, vec3;
-	for (int i = 0; i < 25; i++) {
-		vec1.push_back( (float) i);
-		vec2.push_back( (float) (i ^ 2));
+	for (int i = 0; i < 10000; i++) {
+		bool prime = true;
+		if (i <= 1) {
+			cout << "test";
+			continue;
+		}
+		for (int k = 2; k < i; k++) {
+			if (i % k == 0) {
+				prime = false;
+			}
+		}
+		if (prime == true) {
+			cout << i << " is a prime number." << endl;
+		}
 	}
-
-	for (int i = 0; i < 25; i++){
-		vec3.push_back(vec1[i] + vec2[i]);
-		cout << "for " << i << "; " << vec1[i] << " + " << vec2[i] << " = " << vec3[i] << endl;
-	}
-	
     return 0;
 }
 
