@@ -1,19 +1,17 @@
-//: TMA1Question1.cpp
+//: TMA1Question3.cpp
 
 /* 
- Title: TMA1Question1.cpp
- Description: Open a1q1.txt and count whitespace separated words.
- Date: August 13, 2021
+ Title: TMA1Question3.cpp
+ Description: 
+ Date: August 14, 2021
  Author: Kynan Ware
- Student ID: 3431123 
- Execution (assuming Cygwin is running): ./TMA1Question1.exe
- 
+ Student ID: 3431123
+ Execution: ./TMA1Question3.exe
+  
  Classes: none
 
  Variables:
- in - fstream - a stream to read the TMA1Question1.txt input file. 
- word - string - a string variable to hold the next word. 
- count - int - a counter integer to count how many words have been seen.
+ 
 
 */
 
@@ -57,25 +55,22 @@
  
 */
 
-#include <iostream> // Stream declarations
-#include <fstream> // Stream declarations
-#include <string> // String declarations
+#include <vector> // Vector declarations
+#include <iostream> // Stream declarations 
 using namespace std;
 
 int main(void) {
-	string word;
-	fstream in("TMA1Question1.txt");
-    int count;
+	vector<float> vec1, vec2, vec3;
+	for (int i = 0; i < 25; i++) {
+		vec1.push_back( (float) i);
+		vec2.push_back( (float) (i ^ 2));
+	}
 
-    //Loop through the text file and count words. 
-    while (in >> word) {
-    	count++;
-    }
-
-    //Print the result. 
-    cout << "There are " << count << " whitespace delimited words in a1q1.txt" << endl;
-
-    //Return 0 for portability. 
+	for (int i = 0; i < 25; i++){
+		vec3.push_back(vec1[i] + vec2[i]);
+		cout << "for " << i << "; " << vec1[i] << " + " << vec2[i] << " = " << vec3[i] << endl;
+	}
+	
     return 0;
 }
 
