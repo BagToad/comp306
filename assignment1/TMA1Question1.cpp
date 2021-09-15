@@ -8,11 +8,12 @@
  Student ID: 3431123 
  Execution (assuming Cygwin is running): ./TMA1Question1.exe
  
- Notes: in Cygwin, main must return type int
- 
  Classes: none
 
  Variables:
+ in - fstream - a stream to read the TMA1Question1.txt input file. 
+ word - string - a string variable to hold the next word. 
+ count - int - a counter integer to count how many words have been seen.
 
 */
 
@@ -58,7 +59,7 @@
 
 #include <iostream> // Stream declarations
 #include <fstream> // Stream declarations
-#include <string>
+#include <string> // String declarations
 using namespace std;
 
 int main(void) {
@@ -72,5 +73,7 @@ int main(void) {
     }
 
     cout << "There are " << count << " whitespace delimited words in a1q1.txt" << endl;
+
+    return 0;
 }
 

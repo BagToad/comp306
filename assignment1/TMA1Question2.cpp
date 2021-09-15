@@ -58,7 +58,7 @@
 
 #include <iostream> // Stream declarations
 #include <fstream> // Stream declarations
-#include <string> // string objects
+#include <string> // String declarations
 using namespace std;
 
 int main(void) {
