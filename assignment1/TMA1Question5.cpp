@@ -1,18 +1,17 @@
-//: TMA1Question2.cpp
+//: TMA1Question5.cpp
 
 /* 
- Title: TMA1Question2.cpp
- Description: Open TMA1Question2.txt and print the lines to the console. Print lines as the user presses enter. 
- Date: August 13, 2021
+ Title: TMA1Question5.cpp
+ Description: Calculate prime numbers between 1 and 10,000.
+ Date: August 15, 2021
  Author: Kynan Ware
  Student ID: 3431123
- Execution (assuming Cygwin is running): ./TMA1Question2.exe
-  
+ Execution: ./TMA1Question5.exe
+ 
  Classes: none
 
  Variables:
- in - fstream - stream to read the TMA1Question2.txt input file.
- line - string - sring to store the current line of the input file. 
+ prime - bool - A boolean to hold whether a number is a prime number.
 
 */
 
@@ -56,12 +55,12 @@
  
 */
 
-#include <iostream> // Stream declarations
-#include <fstream> // Stream declarations
-#include <string> // String declarations
+#include <iostream>
+#include <fstream>
 using namespace std;
 
 int main(void) {
+	string string_store[99];
 	fstream in;
 	string line;
 	string filename;
@@ -77,11 +76,14 @@ int main(void) {
     	return 1;
     }
 
-    //Read lines from the file, continue when user presses enter. 
-    while (getline(in, line)) {
-    	cout << line << endl;
-		cout << "Press ENTER to continue..." << endl;
-		cin.get();
+    for (int i = 0; i < 100; i++) {
+    	
+    	//If at eof, then break;
+    	if (! getline(in, line)) {
+    		break;
+    	}
+    	string_store[i] = line;
+    	cout << "line " << i << ": " << string_store[i] << endl;
     }
 
     return 0;

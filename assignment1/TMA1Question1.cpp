@@ -64,8 +64,20 @@ using namespace std;
 
 int main(void) {
 	string word;
-	fstream in("TMA1Question1.txt");
+	ifstream in;
     int count;
+    string filename;
+
+	//Get the filename to open from the user.
+	cout << "Filename to open: ";
+	cin >> filename;
+	in.open(filename);
+
+    //Check if input file exists.
+    if (! in) {
+    	cout << "File does not exist!" << endl;
+    	return 1;
+    }
 
     //Loop through the text file and count words. 
     while (in >> word) {
@@ -73,7 +85,7 @@ int main(void) {
     }
 
     //Print the result. 
-    cout << "There are " << count << " whitespace delimited words in a1q1.txt" << endl;
+    cout << "There are " << count << " whitespace delimited words in " << filename << "." << endl;
 
     //Return 0 for portability. 
     return 0;

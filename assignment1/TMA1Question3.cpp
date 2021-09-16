@@ -61,6 +61,7 @@ using namespace std;
 
 int main(void) {
 	vector<float> vec1, vec2, vec3;
+	
 	for (int i = 0; i < 25; i++) {
 		vec1.push_back( (float) i);
 		vec2.push_back( (float) (i ^ 2));

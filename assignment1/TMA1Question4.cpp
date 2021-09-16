@@ -6,7 +6,7 @@
  Date: August 15, 2021
  Author: Kynan Ware
  Student ID: 3431123
- Execution: ./TMA1Question3.exe
+ Execution: ./TMA1Question4.exe
  
  Classes: none
 
@@ -59,21 +59,30 @@
 using namespace std;
 
 int main(void) {
+	//Loop through all numbers between 0 and 10,000.
 	for (int i = 0; i < 10000; i++) {
 		bool prime = true;
+
+		//0 and 1 are prime numbers.
 		if (i <= 1) {
-			cout << "test";
 			continue;
 		}
+
+		//Loop through all numbers lower than current number. 
 		for (int k = 2; k < i; k++) {
+			//If i is divisible by k, not a prime number. 
 			if (i % k == 0) {
 				prime = false;
+				break;
 			}
 		}
+
+		//Print if the value is a prime number.
 		if (prime == true) {
 			cout << i << " is a prime number." << endl;
 		}
 	}
+    return 0;
     return 0;
 }
 
