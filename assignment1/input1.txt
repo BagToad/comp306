@@ -1,16 +1,20 @@
-//: TMA1Question3.cpp
+//: TMA1Question1.cpp
 
 /* 
- Title: TMA1Question3.cpp
- Description: 
- Date: August 14, 2021
+ Title: TMA1Question1.cpp
+ Description: Open a1q1.txt and count whitespace separated words.
+ Date: August 13, 2021
  Author: Kynan Ware
- Student ID: 3431123
- Execution: ./TMA1Question3.exe
+ Student ID: 3431123 
+ Execution (assuming Cygwin is running): ./TMA1Question1.exe
  
  Classes: none
 
  Variables:
+ in - fstream - a stream to read the TMA1Question1.txt input file. 
+ word - string - a string variable to hold the next word. 
+ count - int - a counter integer to count how many words have been seen.
+
 */
 
 /*
@@ -53,25 +57,37 @@
  
 */
 
-#include <vector> // Vector declarations
-#include <iostream> // Stream declarations 
+#include <iostream> // Stream declarations
+#include <fstream> // Stream declarations
+#include <string> // String declarations
 using namespace std;
 
 int main(void) {
-	vector<float> vec1, vec2, vec3;
+	string word;
+	ifstream in;
+    int count;
+    string filename;
 
-	//Fill first two vectors with the current value and the current value squared, respectively.
-	for (int i = 0; i < 25; i++) {
-		vec1.push_back( (float) i);
-		vec2.push_back( (float) (i ^ 2));
-	}
+	//Get the filename to open from the user.
+	cout << "Filename to open: ";
+	cin >> filename;
+	in.open(filename);
 
-	//Fille the third vector with the sum of the first and second vectors. 
-	for (int i = 0; i < 25; i++){
-		vec3.push_back(vec1[i] + vec2[i]);
-		cout << "for " << i << "; " << vec1[i] << " + " << vec2[i] << " = " << vec3[i] << endl;
-	}
-	
+    //Check if input file exists.
+    if (! in) {
+    	cout << "File does not exist!" << endl;
+    	return 1;
+    }
+
+    //Loop through the text file and count words. 
+    while (in >> word) {
+    	count++;
+    }
+
+    //Print the result. 
+    cout << "There are " << count << " whitespace delimited words in " << filename << "." << endl;
+
+    //Return 0 for portability. 
     return 0;
 }
 

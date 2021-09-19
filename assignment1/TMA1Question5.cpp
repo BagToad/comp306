@@ -76,7 +76,7 @@ int main(void) {
     	return 1;
     }
 
-    for (int i = 0; i < 100; i++) {
+    for (int i = 1; i < 101; i++) {
     	
     	//If at eof, then break;
     	if (! getline(in, line)) {

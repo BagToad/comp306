@@ -2,7 +2,7 @@
 
 /* 
  Title: TMA1Question1.cpp
- Description: Open a1q1.txt and count whitespace separated words.
+ Description: Open a text file and count whitespace separated words.
  Date: August 13, 2021
  Author: Kynan Ware
  Student ID: 3431123 
