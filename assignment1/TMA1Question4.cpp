@@ -63,7 +63,7 @@ int main(void) {
 	for (int i = 0; i < 10000; i++) {
 		bool prime = true;
 
-		//0 and 1 are prime numbers.
+		//0 and 1 are not prime numbers, so skip them.
 		if (i <= 1) {
 			continue;
 		}
@@ -82,7 +82,6 @@ int main(void) {
 			cout << i << " is a prime number." << endl;
 		}
 	}
-    return 0;
     return 0;
 }
 
