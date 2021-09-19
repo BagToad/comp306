@@ -55,6 +55,7 @@
 
 #include <vector> // Vector declarations
 #include <iostream> // Stream declarations 
+#include <cmath> // Math declarations
 using namespace std;
 
 int main(void) {
@@ -62,8 +63,8 @@ int main(void) {
 
 	//Fill first two vectors with the current value and the current value squared, respectively.
 	for (int i = 0; i < 25; i++) {
-		vec1.push_back( (float) i);
-		vec2.push_back( (float) (i ^ 2));
+		vec1.push_back(i);
+		vec2.push_back(pow(i, 2));
 	}
 
 	//Fille the third vector with the sum of the first and second vectors. 

@@ -71,6 +71,9 @@ int main(void) {
 	cin >> filename;
 	in.open(filename);
 
+    //Ignore the enter key in cin following filename input. 
+    cin.ignore();
+
     //Check if input file exists.
     if (! in) {
     	cout << "File does not exist!" << endl;
