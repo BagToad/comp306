@@ -1,5 +1,3 @@
-//: TMA1Question4.cpp
-
 /* 
  Title: TMA1Question4.cpp
  Description:
