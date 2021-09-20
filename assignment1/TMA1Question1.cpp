@@ -2,11 +2,12 @@
 
 /* 
  Title: TMA1Question1.cpp
- Description: Open a text file and count whitespace separated words.
+ Description:
+    Open a text file and count whitespace separated words.
  Date: August 13, 2021
  Author: Kynan Ware
  Student ID: 3431123 
- Execution (assuming Cygwin is running): ./TMA1Question1.exe
+ Execution: ./TMA1Question1.exe
  
  Classes: none
 
