@@ -76,7 +76,8 @@ Normal case 3:
     This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text.
     
     >Filename to open: input7.txt
-    TODO
+    >This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text.
+    >Press ENTER to continue...
 
  Bad Data case 1 (no file exists):
     Input file does not exist.
@@ -110,8 +111,9 @@ Normal case 3:
     newline character leftover in the cin buffer. My initial solution to this problem was to run cin.get() and destroy
     the data I received from it, but cin.ignore() is definitely a more elegant solution.
 
+    Also of note is that the program requires one final enter keypress to exit upon printing the last line.
+
     The program returns an int as per the C++ standard. The retun value is 0 unless the input file cannot be opened. 
- 
 */
 
 #include <iostream> // Stream declarations

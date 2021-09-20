@@ -13,7 +13,6 @@
  in - fstream - a stream to read the TMA1Question1.txt input file. 
  word - string - a string variable to hold the next word. 
  count - int - a counter integer to count how many words have been seen.
-
 */
 
 /*
@@ -39,14 +38,14 @@
      The quick brown fox jumped over the lazy dog.
     
     >Filename to open: input6.txt
-    TODO
+    >There are 36 whitespace delimited words in input6.txt.
 
  Normal case 3 (long input line):
     Input file (input7.txt) contents:
     This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text.
     
     >Filename to open: input7.txt
-    TODO
+    >There are 88 whitespace delimited words in input7.txt.
 
  Bad Data case 1 (no file exists):
     Input file does not exist.
@@ -87,7 +86,6 @@
     side is still one word).
 
     The program returns an int as per the C++ standard. The retun value is 0 unless the input file cannot be opened. 
- 
 */
 
 #include <iostream> // Stream declarations

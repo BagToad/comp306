@@ -13,8 +13,6 @@
  prime - bool - A boolean to track whether a number is a prime number.
  i - int - The first loop counter variable, and the number to evaluate. 
  k - int - The second (nested) loop counter variable, and the number to divide i against to determine i's status as a prime number.
- 
-
 */
 
 /*
@@ -1266,7 +1264,6 @@
  	Online tool used: https://miniwebtool.com/list-of-prime-numbers/?to=10000
 
     The program returns an int as per the C++ standard. The retun value is always 0.
- 
 */
 
 #include <iostream>
