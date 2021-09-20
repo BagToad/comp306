@@ -6,6 +6,7 @@
  Date: August 15, 2021
  Author: Kynan Ware
  Student ID: 3431123
+ Compile: g++ TMA1Question5.cpp -o TMA1Question5.exe
  Execution: ./TMA1Question5.exe
  
  Classes: none
@@ -576,6 +577,7 @@
  
  Bad Data case 3 (empty file)
     Input file (input2.txt) contents should be none. In unix, execute "> input2.txt" without quotations. 
+    
     >Filename to open: input2.txt
     (No output)
 
@@ -593,6 +595,7 @@
  
    The program returns an int as per the C++ standard. The retun value is 0 unless the input file cannot be opened. 
 
+   All testing performed in a Linux environment with g++ version 7.5.0.
 */
 
 #include <iostream> // Stream declarations

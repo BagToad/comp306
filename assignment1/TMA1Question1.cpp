@@ -5,6 +5,7 @@
  Date: August 13, 2021
  Author: Kynan Ware
  Student ID: 3431123 
+ Compile: g++ TMA1Question1.cpp -o TMA1Question1.exe
  Execution: ./TMA1Question1.exe
  
  Classes: none
@@ -86,6 +87,8 @@
     side is still one word).
 
     The program returns an int as per the C++ standard. The retun value is 0 unless the input file cannot be opened. 
+
+    All testing performed in a Linux environment with g++ version 7.5.0.
 */
 
 #include <iostream> // Stream declarations

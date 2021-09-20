@@ -5,6 +5,7 @@
  Date: August 15, 2021
  Author: Kynan Ware
  Student ID: 3431123
+ Compile: g++ TMA1Question4.cpp -o TMA1Question4.exe
  Execution: ./TMA1Question4.exe
  
  Classes: none
@@ -1258,12 +1259,14 @@
 
  	The output of the program was validated by checking random numbers against an online tool in two ways:
  	1. The primes were spot checked between the output of this program and the online tool. No discrepancies found.
- 	2. The primes were counted by executing the program as follows: "./TMA1Question4.exe | wc -l". The value returned is 1229, and
- 	that number matches the number of primes from the online tool.
+ 	2. The primes were counted by executing the program as follows: "./TMA1Question4.exe | wc -l". 
+    The value returned is 1229, and that matches the number of primes from the online tool.
 
  	Online tool used: https://miniwebtool.com/list-of-prime-numbers/?to=10000
 
     The program returns an int as per the C++ standard. The retun value is always 0.
+
+    All testing performed in a Linux environment with g++ version 7.5.0.
 */
 
 #include <iostream>

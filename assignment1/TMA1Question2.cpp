@@ -6,6 +6,7 @@
  Date: August 13, 2021
  Author: Kynan Ware
  Student ID: 3431123
+ Compile: g++ TMA1Question2.cpp -o TMA1Question2.exe
  Execution: ./TMA1Question2.exe
   
  Classes: none
@@ -113,7 +114,9 @@ Normal case 3:
 
     Also of note is that the program requires one final enter keypress to exit upon printing the last line.
 
-    The program returns an int as per the C++ standard. The retun value is 0 unless the input file cannot be opened. 
+    The program returns an int as per the C++ standard. The retun value is 0 unless the input file cannot be opened.
+
+    All testing performed in a Linux environment with g++ version 7.5.0. 
 */
 
 #include <iostream> // Stream declarations

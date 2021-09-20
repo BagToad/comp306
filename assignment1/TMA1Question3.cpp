@@ -7,6 +7,7 @@
  Date: August 14, 2021
  Author: Kynan Ware
  Student ID: 3431123
+ Compile: g++ TMA1Question3.cpp -o TMA1Question3.exe
  Execution: ./TMA1Question3.exe
  
  Classes: none
@@ -56,6 +57,8 @@
  	required by the assignment, but it could be eliminated by writing all three vector assignments in one loop.
  
  	The program returns an int as per the C++ standard. The retun value is always 0.
+
+ 	All testing performed in a Linux environment with g++ version 7.5.0.
 */
 
 #include <vector> // Vector declarations
