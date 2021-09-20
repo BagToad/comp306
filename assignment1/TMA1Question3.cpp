@@ -57,6 +57,7 @@
  	The first and second vectors are fill in a different for loop than the third vector. This is an implementation detail
  	required by the assignment, but it could be eliminated by writing all three vector assignments in one loop.
  
+ 	The program returns an int as per the C++ standard. The retun value is always 0.
 */
 
 #include <vector> // Vector declarations

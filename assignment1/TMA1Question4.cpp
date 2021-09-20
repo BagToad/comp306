@@ -1266,6 +1266,8 @@
  	that number matches the number of primes from the online tool.
 
  	Online tool used: https://miniwebtool.com/list-of-prime-numbers/?to=10000
+
+    The program returns an int as per the C++ standard. The retun value is always 0.
  
 */
 
@@ -1296,5 +1298,6 @@ int main(void) {
 			cout << i << " is a prime number." << endl;
 		}
 	}
+
     return 0;
 }

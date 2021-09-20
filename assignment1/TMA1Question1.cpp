@@ -49,7 +49,7 @@
     
     >Filename to open: input7.txt
     TODO
-    
+
  Bad Data case 1 (no file exists):
     Input file does not exist.
     
@@ -87,6 +87,8 @@
     file fails (file does not exists), the program will print an error. If there is no whitespace in the file,
     begginning and ending of the file are treated as whitespace (one word without whitespace on either
     side is still one word).
+
+    The program returns an int as per the C++ standard. The retun value is 0 unless the input file cannot be opened. 
  
 */
 

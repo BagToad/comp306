@@ -101,8 +101,18 @@ Normal case 3:
  	The program open the input file and read the file line by line as the user presses enter. If opening the input
     file fails (file does not exists), the program will print an error. 
 
-    The ">>" operator is not used to retrieve data from cin because it excludes newline characters. Instead the 
-    cin.get() function is used. This 
+    The ">>" operator is not used to retrieve the ENTER key from cin because it excludes newline characters. Instead,
+    the cin.get() function is used. This function does return the enter key. 
+
+    By using the ">>" operator first to get the filename, I discovered that this leaves a newline character, from after the 
+    user presses enter to confirm their entry, in the cin buffer. This caused the later part of the program which retreives
+    characters from cin to break because it thought the user had already pressed enter to continue. In other words,
+    the program would always print the first two lines of the file even though the user had not pressed enter to the
+    "press enter to continue" prompt. To resolve this issue, I discovered that cin.ignore() can be used to ignore the extra
+    newline character leftover in the cin buffer. My initial solution to this problem was to run cin.get() and destroy
+    the data I received from it, but cin.ignore() is definitely a more elegant solution.
+
+    The program returns an int as per the C++ standard. The retun value is 0 unless the input file cannot be opened. 
  
 */
 

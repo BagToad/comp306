@@ -593,6 +593,8 @@
 	input5.txt
 	i=0; while [ $i -lt 200 ]; do i=$(($i + 1)); echo "this is line # $i" >> input5.txt; done
  
+   The program returns an int as per the C++ standard. The retun value is 0 unless the input file cannot be opened. 
+
 */
 
 #include <iostream> // Stream declarations
