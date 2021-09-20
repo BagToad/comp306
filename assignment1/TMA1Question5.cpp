@@ -2,7 +2,9 @@
 
 /* 
  Title: TMA1Question5.cpp
- Description: Calculate prime numbers between 1 and 10,000.
+ Description: 
+ 	Create 100 string objects and fill them with lines from an input file.
+ 	Print the lines to the terminal prefixed by the line number.
  Date: August 15, 2021
  Author: Kynan Ware
  Student ID: 3431123
@@ -11,52 +13,69 @@
  Classes: none
 
  Variables:
- prime - bool - A boolean to hold whether a number is a prime number.
+ 
 
 */
 
 /*
  TEST PLAN
- 
- Normal case:
- 	>What is your name? Richard
- 	>What is your age? 21
- 	>Hello! My name is Richard, and I am 21 years old!
- 	>In 10 years, I will be 31 years old!
 
- Bad Data case 1 (more than one name)
- 	>What is your name? Richard Huntrods
- 	>What is your age? 21
- 	>Hello! My name is Richard, and I am 21 years old!
- 	>In 10 years, I will be 31 years old!
+ All test plans, unless noted, require the creation of an input file. 
+
+ Normal case:
+    Input file (input1.txt) contents:
+        This is line 1
+        This is line 2
+        This is line 3
+
+    >
+
+ Normal case 2 (file with newlines and special characters)
+    Input file (input3.txt) contents:
+        This is line 1
+        This is line 2
+        This is line 3 followed by blank lines
+        
+        
+        
+        This is line 7 with !?@$%^+=&*();
+
+    >Filename to open: input3.txt
+    >
+
+ Bad Data case 1 (no file exists):
+    Input file does not exist.
+
+    >Filename to open: input1000.txt
+    >File does not exist!
  
- Bad Data case 2 (nonsense or non-alpha name)
- 	>What is your name? zb23xx!
- 	>What is your age? 21
- 	>Hello! My name is zb23xx!, and I am 21 years old!
- 	>In 10 years, I will be 31 years old!
+ Bad Data case 2 (illegal characters in filename input)
+    Input file does not exist because it is an illegal filename.
+
+    >Filename to open: !?@$%^+=&*();
+    >File does not exist!
  
- Bad Data case 3 (negative age)
- 	>What is your name? Richard
- 	>What is your age? -1
- 	>Hello! My name is Richard, and I am -1 years old!
- 	>In 10 years, I will be 9 years old!
- 
- Bad Data case 4 (floating point age)
- 	>What is your name? Richard
- 	>What is your age? 12.5
- 	>Hello! My name is Richard, and I am 12 years old!
- 	>In 10 years, I will be 22 years old!
- 
+ Bad Data case 3 (empty file)
+    Input file (input2.txt) contents should be none. In unix, execute "> input2.txt" without quotations. 
+    >Filename to open: input2.txt
+    (No output)
+
  Discussion:
- 	The program accepts only a single word for the name input (whitespace delimits the word - comma, space, period, etc.)
- 	The program also attempts to convert the age input into an integer, even if this produces a nonsense result (i.e. 'five').
- 	Negative numbers are allowed and processed as if legitimate, and floating point numbers are truncated.
+ 	The program will load 100 lines from the input file into an array of 100 string objects. If the input file exceeds 100 lines, the rest 
+ 	are ignored; only the first 100 are read. If the input file contains less than 100 lines, all available lines are read. 
+
+ 	The test input files input4.txt and input5.txt were generated with unix command lines:
+
+ 	input4.txt:
+ 	while [ $i -lt 100 ]; do i=$(($i + 1)); echo "this is line # $i" >> input4.txt; done
+
+	input5.txt
+	while [ $i -lt 200 ]; do i=$(($i + 1)); echo "this is line # $i" >> input5.txt; done
  
 */
 
-#include <iostream>
-#include <fstream>
+#include <iostream> // Stream declarations
+#include <fstream> // I/O stream declarations
 using namespace std;
 
 int main(void) {

@@ -68,7 +68,7 @@
 */
 
 #include <iostream> // Stream declarations
-#include <fstream> // Stream declarations
+#include <fstream> // I/O stream declarations
 #include <string> // String declarations
 using namespace std;
 

@@ -37,7 +37,7 @@
     >This is line 3
     >Press ENTER to continue...
 
-Normal case 2 (file with newlines and special characters)
+ Normal case 2 (file with newlines and special characters)
     Input file (input3.txt) contents:
         This is line 1
         This is line 2
@@ -80,10 +80,6 @@ Normal case 2 (file with newlines and special characters)
     >Filename to open: input2.txt
     (No output)
  
-
-
-
- 
  Discussion:
  	The program open the input file and read the file line by line as the user presses enter. If opening the input
     file fails (file does not exists), the program will print an error. 
@@ -94,7 +90,7 @@ Normal case 2 (file with newlines and special characters)
 */
 
 #include <iostream> // Stream declarations
-#include <fstream> // Stream declarations
+#include <fstream> // I/O stream declarations
 #include <string> // String declarations
 using namespace std;
 
