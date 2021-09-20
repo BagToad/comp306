@@ -29,24 +29,30 @@
         This is line 2
         This is line 3
     >Filename to open: input1.txt
-    >There are 12 whitespace delimited words in input1.txt.
+    >This is line 1
+    >Press ENTER to continue...
+This is line 2
+Press ENTER to continue...
+This is line 3
+Press ENTER to continue...
+
 
  Bad Data case 1 (no file exists):
     Input file does not exist.
     >Filename to open: input1000.txt
-    >File does not exist.
+    >File does not exist!
  
  Bad Data case 2 (illegal characters in filename input)
     Input file does not exist because it is an illegal filename.
     >Filename to open: !?@$%^+=&*();
-    >File does not exist.
+    >File does not exist!
  
  Bad Data case 3 (empty file)
     Input file (input2.txt) contents should be none. In unix, execute "> input2.txt" without quotations. 
     >Filename to open: input2.txt
-    >There are 0 whitespace delimited words in input2.txt.
+    (No output)
  
- Bad Data case 4 (file with newlines an special characters)
+ Bad Data case 4 (file with newlines and special characters)
     Input file (input3.txt) contents:
         This is line 1
         This is line 2
@@ -56,7 +62,21 @@
         
         This is line 7 with !?@$%^+=&*();
     >Filename to open: input3.txt
-    >There are 22 whitespace delimited words in input3.txt.
+This is line 1
+Press ENTER to continue...
+This is line 2
+Press ENTER to continue...
+This is line 3 followed by blank lines
+Press ENTER to continue...
+
+Press ENTER to continue...
+
+Press ENTER to continue...
+
+Press ENTER to continue...
+This is line 7 with !?@$%^+=&*();
+Press ENTER to continue...
+
 
  
  Discussion:
@@ -95,7 +115,7 @@ int main(void) {
     //Read lines from the file, continue when user presses enter. 
     while (getline(in, line)) {
     	cout << line << endl;
-		cout << "Press ENTER to continue..." << endl;
+		cout << "Press ENTER to continue...";
 		cin.get();
     }
 
