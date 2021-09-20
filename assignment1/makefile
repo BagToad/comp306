@@ -15,6 +15,6 @@ TMA1Question4: TMA1Question4.cpp
 TMA1Question5: TMA1Question5.cpp
 	g++ TMA1Question5.cpp -o TMA1Question5.exe
 
-#Remove any binaries built with Sublime text during testing. 
-clean:
-	rm TMA1Question?
+#Remove executibles.
+rmexe:
+	rm TMA1Question?.exe

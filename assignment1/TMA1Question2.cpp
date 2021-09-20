@@ -8,7 +8,7 @@
  Date: August 13, 2021
  Author: Kynan Ware
  Student ID: 3431123
- Execution (assuming Cygwin is running): ./TMA1Question2.exe
+ Execution: ./TMA1Question2.exe
   
  Classes: none
 
@@ -29,18 +29,22 @@
         This is line 2
         This is line 3
     >Filename to open: input1.txt
+    >There are 12 whitespace delimited words in input1.txt.
 
  Bad Data case 1 (no file exists):
     Input file does not exist.
     >Filename to open: input1000.txt
+    >File does not exist.
  
  Bad Data case 2 (illegal characters in filename input)
     Input file does not exist because it is an illegal filename.
     >Filename to open: !?@$%^+=&*();
+    >File does not exist.
  
  Bad Data case 3 (empty file)
     Input file (input2.txt) contents should be none. In unix, execute "> input2.txt" without quotations. 
     >Filename to open: input2.txt
+    >There are 0 whitespace delimited words in input2.txt.
  
  Bad Data case 4 (file with newlines an special characters)
     Input file (input3.txt) contents:
@@ -52,6 +56,8 @@
         
         This is line 7 with !?@$%^+=&*();
     >Filename to open: input3.txt
+    >There are 22 whitespace delimited words in input3.txt.
+
  
  Discussion:
  	The program open the input file and read the file line by line as the user presses enter. If opening the input
