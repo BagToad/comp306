@@ -23,7 +23,7 @@
 
  All test plans, unless noted, require the creation of an input file. 
 
- Normal case:
+ Normal case 1:
     Input file (input1.txt) contents:
         This is line 1
         This is line 2
@@ -62,6 +62,23 @@
     >Press ENTER to continue...
     >This is line 7 with !?@$%^+=&*();
     >Press ENTER to continue...
+
+Normal case 3:
+    Input file (input6.txt) contents:
+     The quick brown fox jumped over the lazy dog.
+     The quick brown fox jumped over the lazy dog.
+     The quick brown fox jumped over the lazy dog.
+     The quick brown fox jumped over the lazy dog.
+    
+    >Filename to open: input6.txt
+    TODO
+
+ Normal case 4 (long input line):
+    Input file (input7.txt) contents:
+    This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text. This is a very long line of text.
+    
+    >Filename to open: input7.txt
+    TODO
 
  Bad Data case 1 (no file exists):
     Input file does not exist.

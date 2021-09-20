@@ -49,7 +49,8 @@
 
  
  Discussion:
- 	The program doesn't take any input. The program will fill 3 vectors in the following way: the first vector
+ 	The program doesn't take any input, and so test plans are limited. The program should execute the same every time.
+ 	The program will fill 3 vectors in the following way: the first vector
  	is filled with the loop counter. The second vector is filled with the first vector squared. The third vector
  	is filled with the sum of the first two vectors. 
 

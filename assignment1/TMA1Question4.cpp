@@ -1255,7 +1255,8 @@
 
  
  Discussion:
- 	The program does not take any input. The program will detect any prime numbers between 1 and 10,000, and print them to the terminal.
+ 	The program does not take any input, and so test plans are limited. The program should execute the same every time.
+    The program will detect any prime numbers between 1 and 10,000, and print them to the terminal.
  	1 (and values below it) is immediately assumed to not be a prime, and it is the only number that the program does 
  	not attempt to evaluate. 
 
