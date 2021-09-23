@@ -12,9 +12,9 @@
  Classes: none
 
  Variables:
- in - fstream - stream to read the TMA1Question2.txt input file.
- line - string - sring to store the current line of the input file. 
-
+ in - fstream - stream to read the text file.
+ line - string - sring to store the current line of the text file. 
+ filename - strong - a string to hold the text file's filename. 
 */
 
 /*

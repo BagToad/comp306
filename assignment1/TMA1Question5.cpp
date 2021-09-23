@@ -12,7 +12,10 @@
  Classes: none
 
  Variables:
- 
+ string_store - string array - an array of 100 strings to store each line of the text file. 
+ in - fstream - a stream to read the text file. 
+ line - string - a string to hold the most recently read line from the text file. 
+ filename - strong - a string to hold the text file's filename. 
 
 */
 

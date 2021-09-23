@@ -11,9 +11,10 @@
  Classes: none
 
  Variables:
- in - fstream - a stream to read the TMA1Question1.txt input file. 
+ in - fstream - a stream to read the text file. 
  word - string - a string variable to hold the next word. 
  count - int - a counter integer to count how many words have been seen.
+ filename - strong - a string to hold the text file's filename. 
 */
 
 /*
