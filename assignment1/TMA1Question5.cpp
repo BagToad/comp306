@@ -1,7 +1,7 @@
 /* 
  Title: TMA1Question5.cpp
  Description: 
- 	Create 100 string objects and fill them with lines from an input file.
+ 	Create 100 string objects and fill them with lines from a text file.
  	Print the lines to the terminal prefixed by the line number.
  Date: August 15, 2021
  Author: Kynan Ware

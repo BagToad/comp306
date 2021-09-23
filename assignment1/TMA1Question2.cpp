@@ -1,8 +1,8 @@
 /* 
  Title: TMA1Question2.cpp
  Description: 
-    Open TMA1Question2.txt and print the lines to the console. Print one line initially, 
-    then only print the next line when the user presses enter.
+    Open a text file and print the lines to the console. Print one line initially, 
+    then only print the next line(s) when the user presses enter.
  Date: August 13, 2021
  Author: Kynan Ware
  Student ID: 3431123
