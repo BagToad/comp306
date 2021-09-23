@@ -19,7 +19,7 @@
 /*
  TEST PLAN
 
- All test plans, unless noted, require the creation of an input file. 
+ All test plans, unless noted, require an input file. 
 
  Normal case (file has less than 100 lines):
     Input file (input1.txt) contents:
