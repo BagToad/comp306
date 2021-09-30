@@ -155,19 +155,21 @@ int main(void) {
 
 	DVD inventory[10];
 	int count = 0;
-	for (int i = 0; i < 9; i++) {
+	for (int i = 0; i < 10; i++) {
 		string title;
 		int year;
 		cout << "LOADING DVD!" << endl;
 
 
-		if (in.peek() == EOF) {break;}
+		// if (in.peek() == EOF) {break;};
+
 		if (! getline(in, title)) {break;};
+
 		if (in.peek() == EOF) {break;};
 		in >> year;
-		if (in.peek() == EOF) {break;};
-		in.ignore();
 		count++;
+		// if (in.peek() == EOF) {break;};
+		in.ignore();
 
 		inventory[i] = DVD(title, year);
 	}
