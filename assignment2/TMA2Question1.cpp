@@ -131,6 +131,7 @@ public:
 		}
 		cout << endl;
 		cout << "last rent date: " << last_rent_date << endl;
+		cout << endl;
 	}
 
 };
@@ -158,20 +159,21 @@ int main(void) {
 	for (int i = 0; i < 10; i++) {
 		string title;
 		int year;
-		cout << "LOADING DVD!" << endl;
 
-
-		// if (in.peek() == EOF) {break;};
-
+		if (in.peek() == '\n') {break;};
+		
 		if (! getline(in, title)) {break;};
 
 		if (in.peek() == EOF) {break;};
 		in >> year;
 		count++;
-		// if (in.peek() == EOF) {break;};
 		in.ignore();
 
 		inventory[i] = DVD(title, year);
+	}
+
+	if (count <= 0) {
+		cout << "No lines with information to read." << endl;
 	}
 
 	for (int i = 0; i < count; i++) {
