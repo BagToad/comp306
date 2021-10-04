@@ -300,7 +300,7 @@ last rent date: none
 		The Lord of the Rings: The Fellowship of the Ring
 		ALPHA INVALID DATA
 		
-	>Filename to open: input5.txt	
+	>Filename to open: input5.txt
 	=== Printing DVD information ===
 	title: The Shawshank Redemption
 	year: 1994
@@ -327,21 +327,54 @@ last rent date: none
 
 
 
- Bad Data case 3 (empty file)
-  
- 
- Bad Data case 4 (file with newlines and special characters)
-   
 
- 
+ Bad Data case 3 (A couple newlines in between valid entries)
+ 	Input file (input6.txt) contents:
+		The Shawshank Redemption
+		1994
+		The Godfather
+		1972
+		The Godfather: Part II
+
+		1974
+		The Dark Night
+		2008
+
+		12 Angry Men
+		1957
+		Schindler's List
+		1993
+		The Lord of the Rings: The Return of the King
+		2003
+		Pulp Fiction
+		1994
+		The Good, the Bad, and the Ugly
+		1966
+		The Lord of the Rings: The Fellowship of the Ring
+		2001
+
+ 	>Filename to open: input6.txt
+	=== Printing DVD information ===
+	title: The Shawshank Redemption
+	year: 1994
+	available: Yes
+	last rent date: none
+
+	=== Printing DVD information ===
+	title: The Godfather
+	year: 1972
+	available: Yes
+	last rent date: none
+
+
  Discussion:
  	The program opens a text input file and reads it into up to 10 DVD object instances. If more than 10 DVDs are
  	provided in the input file, they are ignored. If zero DVDs are found in the input file, then a message is printed.  
 
  	The input file format is: the title on one line immediately followed by the year on a separate line. 
 
- 	The title can be any combination of characters, but the year must be an integer. If the year is not an integer, the DVD is skipped. 
-	There is no validation done on year aside from it being an integer. 
+ 	The title can be any combination of characters, but the year must be an integer. If the year is not an integer,
+ 	the offending DVD and all subsequent DVDs are not imported.
 	
     The program returns an int as per the C++ standard.
 
@@ -469,20 +502,21 @@ int main(void) {
 		string title;
 		int year;
 
-		//Stop reading on newlines. 
-		if (in.peek() == '\n') {break;};
+		//Stop reading on blank lines or EOF. 
+		if (in.peek() == '\n' || in.peek() == EOF) {break;};
 		
 		//Get title from first line.
-		//Stop reading at EOF.
 		if (! getline(in, title)) {break;};
 		
+		//Stop reading at EOF or blank lines
+		if (in.peek() == '\n' || in.peek() == EOF) {break;};
 
 		//Get year from next line.
 		in >> year;
-		in.ignore();
 
-		//Stop reading at EOF
-		if (in.peek() == EOF) {break;};
+		//Stop reading if next character is not newline. This means that reading the year failed.
+		if (in.peek() != '\n') {break;};
+		in.ignore();
 
 		//Commit data to inventory.
 		count++;
