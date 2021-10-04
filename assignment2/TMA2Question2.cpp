@@ -48,7 +48,7 @@ using namespace std;
 
 int main(void) {
 	const int ARRAY_NUM = 100;
-	const char input_alphabet[101] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUV";
+	const char input_alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUV";
 
 	int* number = new int(1);
 	long* long_number = new long(10000);
