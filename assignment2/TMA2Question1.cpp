@@ -1,7 +1,7 @@
 /* 
  Title: TMA2Question1.cpp
  Description:
-    Open a text file and count whitespace separated words.
+    Track DVD information. Import DVD data from a text file.
  Date: August 13, 2021
  Author: Kynan Ware
  Student ID: 3431123 
@@ -57,11 +57,17 @@
 
 using namespace std;
 
+
+/*
+	A DVD object. 
+*/
 class DVD {
 	bool available;
 	string last_rent_date;
 	int year;
 	string title;
+
+
 
 public:
 	DVD() {};
@@ -136,8 +142,6 @@ public:
 
 };
 
-
-
 int main(void) {
 	ifstream in;
     string filename;
@@ -156,26 +160,38 @@ int main(void) {
 
 	DVD inventory[10];
 	int count = 0;
+
+	//Read up to 10 DVDs from input file.
 	for (int i = 0; i < 10; i++) {
 		string title;
 		int year;
 
+		//Stop reading on newlines. 
 		if (in.peek() == '\n') {break;};
 		
+		//Get title from first line.
+		//Stop reading at EOF.
 		if (! getline(in, title)) {break;};
+		
 
-		if (in.peek() == EOF) {break;};
+		//Get year from next line.
 		in >> year;
-		count++;
 		in.ignore();
 
+		//Stop reading at EOF
+		if (in.peek() == EOF) {break;};
+
+		//Commit data to inventory.
+		count++;
 		inventory[i] = DVD(title, year);
 	}
 
+	//Did not read any valid line pairs from input file.
 	if (count <= 0) {
 		cout << "No lines with information to read." << endl;
 	}
 
+	//Print inventory out. 
 	for (int i = 0; i < count; i++) {
 		inventory[i].print();
 	}

@@ -50,10 +50,56 @@
     All testing performed in a Linux environment with g++ version 7.5.0.
 */
 
+#include <fstream>
+#include <iostream>
+
 using namespace std;
 
+class Text {
+	string input_text;
+	string line;
+public:
+	Text() {
+	}
+
+	Text(string f) {
+		ifstream in;
+		in.open(f);
+
+		//Check if input file exists.
+	    if (! in) {
+	    	cout << "File does not exist!" << endl;
+	    	return;
+	    }
+
+		while (getline(in, line)) {
+			input_text = input_text + line + "\n";
+		}
+	}
+
+	void contents() {
+		cout << endl << input_text << endl;
+	}
+};
+
 int main(void) {
-	
+	ifstream in;
+    string filename;
+
+	//Get the filename to open from the user.
+	cout << "Filename to open: ";
+	cin >> filename;
+	in.open(filename);
+
+    //Check if input file exists.
+    if (! in) {
+    	cout << "File does not exist!" << endl;
+    	return 1;
+    }
+
+    Text t = Text(filename);
+    t.contents();
+
     return 0;
 }
 
