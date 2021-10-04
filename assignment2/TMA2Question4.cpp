@@ -2,7 +2,7 @@
  Title: TMA2Question4.cpp
  Description:
     Open a text file and count whitespace separated words.
- Date: August 13, 2021
+ Date: October 4, 2021
  Author: Kynan Ware
  Student ID: 3431123 
  Compile: g++ TMA2Question4.cpp -o TMA2Question4.exe

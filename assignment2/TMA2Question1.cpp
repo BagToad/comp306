@@ -2,15 +2,25 @@
  Title: TMA2Question1.cpp
  Description:
     Track DVD information. Import DVD data from a text file.
- Date: August 13, 2021
+ Date: October 4, 2021
  Author: Kynan Ware
  Student ID: 3431123 
  Compile: g++ TMA2Question1.cpp -o TMA2Question1.exe
  Execution: ./TMA2Question1.exe
  
- Classes: none
+ Classes:
+ DVD - A representation of a DVD in a video rental store. 
 
  Variables:
+ in - fstream - a stream to read the text file. 
+ filename - string - a string to hold the text file's filename. 
+ inventory - DVD - an array of DVDs.
+ count - int - the DVDs read from the input text file.
+
+ Constants:
+ NUM_DVD - int - The number of DVDs to read from input text file.
+
+
 
 */
 
@@ -20,19 +30,301 @@
  All test plans, unless noted, require an input file. 
 
 
- Normal case 1:
- 
+ Normal case 1 (< 10 DVDS):
+ 	Input file (input1.txt) contents:
+ 	The Dark Night
+2008
+12 Angry Men
+1957
+Schindler's List
+1993
+The Lord of the Rings: The Return of the King
+2003
+Pulp Fiction
+1994
+The Good, the Bad, and the Ugly
+1966
+The Lord of the Rings: The Fellowship of the Ring
+2001
 
- Normal case 2:
-   
+	>Filename to open: input1.txt
+	>=== Printing DVD information ===
+title: The Dark Night
+year: 2008
+available: Yes
+last rent date: none
 
- Normal case 3:
-  
+=== Printing DVD information ===
+title: 12 Angry Men
+year: 1957
+available: Yes
+last rent date: none
 
- Bad Data case 1:
- 
+=== Printing DVD information ===
+title: Schindler's List
+year: 1993
+available: Yes
+last rent date: none
 
- Bad Data case 2 (illegal characters in filename input)
+=== Printing DVD information ===
+title: The Lord of the Rings: The Return of the King
+year: 2003
+available: Yes
+last rent date: none
+
+=== Printing DVD information ===
+title: Pulp Fiction
+year: 1994
+available: Yes
+last rent date: none
+
+=== Printing DVD information ===
+title: The Good, the Bad, and the Ugly
+year: 1966
+available: Yes
+last rent date: none
+
+
+
+ Normal case 2 (exactly 10 DVDs):
+	Input file (input2.txt) contents:
+		The Shawshank Redemption
+		1994
+		The Godfather
+		1972
+		The Godfather: Part II
+		1974
+		The Dark Night
+		2008
+		12 Angry Men
+		1957
+		Schindler's List
+		1993
+		The Lord of the Rings: The Return of the King
+		2003
+		Pulp Fiction
+		1994
+		The Good, the Bad, and the Ugly
+		1966
+		The Lord of the Rings: The Fellowship of the Ring
+		2001
+
+	>Filename to open: input2.txt
+	>=== Printing DVD information ===
+	title: The Shawshank Redemption
+	year: 1994
+	available: Yes
+	last rent date: none
+
+	=== Printing DVD information ===
+	title: The Godfather
+	year: 1972
+	available: Yes
+	last rent date: none
+
+	=== Printing DVD information ===
+	title: The Godfather: Part II
+	year: 1974
+	available: Yes
+	last rent date: none
+
+	=== Printing DVD information ===
+	title: The Dark Night
+	year: 2008
+	available: Yes
+	last rent date: none
+
+	=== Printing DVD information ===
+	title: 12 Angry Men
+	year: 1957
+	available: Yes
+	last rent date: none
+
+	=== Printing DVD information ===
+	title: Schindler's List
+	year: 1993
+	available: Yes
+	last rent date: none
+
+	=== Printing DVD information ===
+	title: The Lord of the Rings: The Return of the King
+	year: 2003
+	available: Yes
+	last rent date: none
+
+	=== Printing DVD information ===
+	title: Pulp Fiction
+	year: 1994
+	available: Yes
+	last rent date: none
+
+	=== Printing DVD information ===
+	title: The Good, the Bad, and the Ugly
+	year: 1966
+	available: Yes
+	last rent date: none
+
+	>
+
+
+ Normal case 3 (> 10 DVDs):
+	Input file (input4.txt) contents:
+		The Shawshank Redemption
+		1994
+		The Godfather
+		1972
+		The Godfather: Part II
+		1974
+		The Dark Night
+		2008
+		12 Angry Men
+		1957
+		Schindler's List
+		1993
+		The Lord of the Rings: The Return of the King
+		2003
+		Pulp Fiction
+		1994
+		The Good, the Bad, and the Ugly
+		1966
+		The Lord of the Rings: The Fellowship of the Ring
+		2001
+		Fight Club
+		1999
+		Forrest Gump
+		1994
+	
+	>Filename to open: input4.txt
+	=== Printing DVD information ===
+	title: The Shawshank Redemption
+	year: 1994
+	available: Yes
+	last rent date: none
+
+	=== Printing DVD information ===
+	title: The Godfather
+	year: 1972
+	available: Yes
+	last rent date: none
+
+	=== Printing DVD information ===
+	title: The Godfather: Part II
+	year: 1974
+	available: Yes
+	last rent date: none
+
+	=== Printing DVD information ===
+	title: The Dark Night
+	year: 2008
+	available: Yes
+	last rent date: none
+
+	=== Printing DVD information ===
+	title: 12 Angry Men
+	year: 1957
+	available: Yes
+	last rent date: none
+
+	=== Printing DVD information ===
+	title: Schindler's List
+	year: 1993
+	available: Yes
+	last rent date: none
+
+	=== Printing DVD information ===
+	title: The Lord of the Rings: The Return of the King
+	year: 2003
+	available: Yes
+	last rent date: none
+
+	=== Printing DVD information ===
+	title: Pulp Fiction
+	year: 1994
+	available: Yes
+	last rent date: none
+
+	=== Printing DVD information ===
+	title: The Good, the Bad, and the Ugly
+	year: 1966
+	available: Yes
+	last rent date: none
+
+	=== Printing DVD information ===
+	title: The Lord of the Rings: The Fellowship of the Ring
+	year: 2001
+	available: Yes
+	last rent date: none
+
+
+
+ Bad Data case 1 (only newlines in input file):
+	Input file (input3.txt) contents:
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	>Filename to open: input3.txt
+	>No lines with information to read.
+
+
+ Bad Data case 2 (Non-integer data in some years in input file)
+	Input file (input5.txt) contents:
+		The Shawshank Redemption
+		1994
+		The Godfather
+		1972
+		The Godfather: Part II
+		1974
+		The Dark Night
+		2008
+		12 Angry Men
+		!@#%!%!@#!#@
+		Schindler's List
+		1993
+		The Lord of the Rings: The Return of the King
+		2003
+		Pulp Fiction
+		1994
+		The Good, the Bad, and the Ugly
+		1966
+		The Lord of the Rings: The Fellowship of the Ring
+		ALPHA INVALID DATA
+		
+	>Filename to open: input5.txt	
+	=== Printing DVD information ===
+	title: The Shawshank Redemption
+	year: 1994
+	available: Yes
+	last rent date: none
+
+	=== Printing DVD information ===
+	title: The Godfather
+	year: 1972
+	available: Yes
+	last rent date: none
+
+	=== Printing DVD information ===
+	title: The Godfather: Part II
+	year: 1974
+	available: Yes
+	last rent date: none
+
+	=== Printing DVD information ===
+	title: The Dark Night
+	year: 2008
+	available: Yes
+	last rent date: none
+
 
 
  Bad Data case 3 (empty file)
@@ -43,8 +335,14 @@
 
  
  Discussion:
- 	
+ 	The program opens a text input file and reads it into up to 10 DVD object instances. If more than 10 DVDs are
+ 	provided in the input file, they are ignored. If zero DVDs are found in the input file, then a message is printed.  
 
+ 	The input file format is: the title on one line immediately followed by the year on a separate line. 
+
+ 	The title can be any combination of characters, but the year must be an integer. If the year is not an integer, the DVD is skipped. 
+	There is no validation done on year aside from it being an integer. 
+	
     The program returns an int as per the C++ standard.
 
     All testing performed in a Linux environment with g++ version 7.5.0.
@@ -59,18 +357,23 @@ using namespace std;
 
 
 /*
-	A DVD object. 
+	A DVD object to track DVD information and availability.
 */
 class DVD {
+private:
 	bool available;
 	string last_rent_date;
 	int year;
 	string title;
 
-
-
 public:
-	DVD() {};
+	DVD() {
+		available = true;
+		last_rent_date = "none";
+		year = -1;
+		title = "unavailable";
+
+	};
 
 	DVD(string t, int y) {
 		available = true;
@@ -157,12 +460,12 @@ int main(void) {
     	return 1;
     }
 
-
-	DVD inventory[10];
+    const int NUM_DVD = 10;
+	DVD inventory[NUM_DVD];
 	int count = 0;
 
 	//Read up to 10 DVDs from input file.
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < NUM_DVD; i++) {
 		string title;
 		int year;
 
