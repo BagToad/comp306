@@ -236,7 +236,7 @@
 	The program will load an int, a long, an array of chars, and an array of floats with data. Next, it will print the types
 	alongside the memory address and values.
 	
-	To retrieve the memory address of an element within a char array, a static cast is required to prevent the << operator
+	To retrieve the memory address of an element within a char array, a static cast to a void* is required to prevent the << operator
 	from treating the char* as a string. 
 	Derived from: https://www.codeproject.com/Questions/823804/How-Do-I-Find-The-Memory-Address-Of-A-Character-In
 
@@ -251,7 +251,7 @@ using namespace std;
 
 int main(void) {
 	const int ARRAY_NUM = 100;
-	const char input_alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUV";
+	const char INPUT_ALPHABET[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUV";
 
 	int* number = new int(1);
 	long* long_number = new long(10000);
@@ -261,7 +261,7 @@ int main(void) {
 
 	//Fill char array with alphabet
 	for (int i = 0; i < ARRAY_NUM; i++) {
-		chars[i] = input_alphabet[i];
+		chars[i] = INPUT_ALPHABET[i];
 	}
 
 	//Fill float array with values between 101 and 201.
@@ -275,7 +275,7 @@ int main(void) {
 
 	//Print arrays.
 	for (int i = 0; i < ARRAY_NUM; i++) {
-		/*	Static cast required to prevent << from treating char* as a string and printing it. 
+		/*	Static cast to void* required to prevent << from treating char* as a string and printing it. 
 		  	Derived from:
 			https://www.codeproject.com/Questions/823804/How-Do-I-Find-The-Memory-Address-Of-A-Character-In
 		*/

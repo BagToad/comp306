@@ -392,10 +392,6 @@ last rent date: none
 
 using namespace std;
 
-
-/*
-	A DVD object to track DVD information and availability.
-*/
 class DVD {
 private:
 	bool available;

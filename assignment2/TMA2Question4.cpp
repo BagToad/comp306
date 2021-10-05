@@ -122,7 +122,6 @@
  Discussion:
  	The program will open an input file and load the contents in a Text class. The program will then print the text it stored.
 
-
 	If the input file is empty or does not exist, the program will still attept to print out the stored text when the 
 	Text.contents() method is called.
 
