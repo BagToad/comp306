@@ -1,49 +1,48 @@
 /* 
  Title: TMA2Question3.cpp
  Description:
-    Open a text file and count whitespace separated words.
+    Create three classes, a hen, nest and egg. Nest the classes within each other.
+    Instantiate each class and print them by calling the display function.
  Date: October 4, 2021
  Author: Kynan Ware
  Student ID: 3431123 
  Compile: g++ TMA2Question3.cpp -o TMA2Question3.exe
  Execution: ./TMA2Question3.exe
  
- Classes: none
+ Classes:
+ Hen - Contains the display member function to describe what this class is. Holds the Nest class. 
+ Nest - Contains the display member function to describe what this class is. Holds the Egg class.
+ Egg - Contains the display member function to describe what this class is. 
 
  Variables:
-
+ h - Hen - an instance of Hen.
+ n - Nest - an instance of Nest.
+ e - Egg - an instance of Egg. 
 */
 
 /*
  TEST PLAN
  
- All test plans, unless noted, require an input file. 
+ Normal case:
+	=== Creating Objects ===
+	Created Hen!
+	Created Nest!
+	Created Egg!
+	=== Displaying Objects ===
+	This is a Hen!
+	This is a Nest!
+	This is an Egg!
+	=== Deleting Objects ===
+	Destroyed Hen!
+	Destroyed Nest!
+	Destroyed Egg!
 
-
- Normal case 1:
- 
-
- Normal case 2:
-   
-
- Normal case 3:
-  
-
- Bad Data case 1:
- 
-
- Bad Data case 2 (illegal characters in filename input)
-
-
- Bad Data case 3 (empty file)
-  
- 
- Bad Data case 4 (file with newlines and special characters)
    
 
  
  Discussion:
- 	
+ 	The program doesn't take any input, and so test plans are limited. The program should execute the same every time.
+ 	The program will instantiate a Hen, Nest, and Egg object, then call each class's display function.
 
     The program returns an int as per the C++ standard.
 
