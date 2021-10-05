@@ -24,8 +24,6 @@
  Constants:
  NUM_DVD - int - The number of DVDs to read from input text file.
 
-
-
 */
 
 /*
