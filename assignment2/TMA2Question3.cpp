@@ -24,22 +24,19 @@
  TEST PLAN
  
  Normal case:
-	=== Creating Objects ===
-	Created Hen!
-	Created Nest!
-	Created Egg!
-	=== Displaying Objects ===
-	This is a Hen!
-	This is a Nest!
-	This is an Egg!
-	=== Deleting Objects ===
-	Destroyed Hen!
-	Destroyed Nest!
-	Destroyed Egg!
-
+	>=== Creating Objects ===
+	>Created Hen!
+	>Created Nest!
+	>Created Egg!
+	>=== Displaying Objects ===
+	>This is a Hen!
+	>This is a Nest!
+	>This is an Egg!
+	>=== Deleting Objects ===
+	>Destroyed Hen!
+	>Destroyed Nest!
+	>Destroyed Egg!
    
-
- 
  Discussion:
  	The program doesn't take any input, and so test plans are limited. The program should execute the same every time.
  	The program will instantiate a Hen, Nest, and Egg object, then call each class's display function.

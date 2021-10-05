@@ -36,58 +36,58 @@
 
  Normal case 1 (< 10 DVDS):
  	Input file (input1.txt) contents:
- 	The Dark Night
-2008
-12 Angry Men
-1957
-Schindler's List
-1993
-The Lord of the Rings: The Return of the King
-2003
-Pulp Fiction
-1994
-The Good, the Bad, and the Ugly
-1966
-The Lord of the Rings: The Fellowship of the Ring
-2001
+	 	The Dark Night
+		2008
+		12 Angry Men
+		1957
+		Schindler's List
+		1993
+		The Lord of the Rings: The Return of the King
+		2003
+		Pulp Fiction
+		1994
+		The Good, the Bad, and the Ugly
+		1966
+		The Lord of the Rings: The Fellowship of the Ring
+		2001
 
 	>Filename to open: input1.txt
 	>=== Printing DVD information ===
-title: The Dark Night
-year: 2008
-available: Yes
-last rent date: none
-
-=== Printing DVD information ===
-title: 12 Angry Men
-year: 1957
-available: Yes
-last rent date: none
-
-=== Printing DVD information ===
-title: Schindler's List
-year: 1993
-available: Yes
-last rent date: none
-
-=== Printing DVD information ===
-title: The Lord of the Rings: The Return of the King
-year: 2003
-available: Yes
-last rent date: none
-
-=== Printing DVD information ===
-title: Pulp Fiction
-year: 1994
-available: Yes
-last rent date: none
-
-=== Printing DVD information ===
-title: The Good, the Bad, and the Ugly
-year: 1966
-available: Yes
-last rent date: none
-
+	>title: The Dark Night
+	>year: 2008
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: 12 Angry Men
+	>year: 1957
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: Schindler's List
+	>year: 1993
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: The Lord of the Rings: The Return of the King
+	>year: 2003
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: Pulp Fiction
+	>year: 1994
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: The Good, the Bad, and the Ugly
+	>year: 1966
+	>available: Yes
+	>last rent date: none
+   >
 
 
  Normal case 2 (exactly 10 DVDs):
@@ -115,59 +115,59 @@ last rent date: none
 
 	>Filename to open: input2.txt
 	>=== Printing DVD information ===
-	title: The Shawshank Redemption
-	year: 1994
-	available: Yes
-	last rent date: none
-
-	=== Printing DVD information ===
-	title: The Godfather
-	year: 1972
-	available: Yes
-	last rent date: none
-
-	=== Printing DVD information ===
-	title: The Godfather: Part II
-	year: 1974
-	available: Yes
-	last rent date: none
-
-	=== Printing DVD information ===
-	title: The Dark Night
-	year: 2008
-	available: Yes
-	last rent date: none
-
-	=== Printing DVD information ===
-	title: 12 Angry Men
-	year: 1957
-	available: Yes
-	last rent date: none
-
-	=== Printing DVD information ===
-	title: Schindler's List
-	year: 1993
-	available: Yes
-	last rent date: none
-
-	=== Printing DVD information ===
-	title: The Lord of the Rings: The Return of the King
-	year: 2003
-	available: Yes
-	last rent date: none
-
-	=== Printing DVD information ===
-	title: Pulp Fiction
-	year: 1994
-	available: Yes
-	last rent date: none
-
-	=== Printing DVD information ===
-	title: The Good, the Bad, and the Ugly
-	year: 1966
-	available: Yes
-	last rent date: none
-
+	>title: The Shawshank Redemption
+	>year: 1994
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: The Godfather
+	>year: 1972
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: The Godfather: Part II
+	>year: 1974
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: The Dark Night
+	>year: 2008
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: 12 Angry Men
+	>year: 1957
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: Schindler's List
+	>year: 1993
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: The Lord of the Rings: The Return of the King
+	>year: 2003
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: Pulp Fiction
+	>year: 1994
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: The Good, the Bad, and the Ugly
+	>year: 1966
+	>available: Yes
+	>last rent date: none
+	>
 
  Normal case 3 (> 10 DVDs):
 	Input file (input4.txt) contents:
@@ -197,66 +197,66 @@ last rent date: none
 		1994
 	
 	>Filename to open: input4.txt
-	=== Printing DVD information ===
-	title: The Shawshank Redemption
-	year: 1994
-	available: Yes
-	last rent date: none
-
-	=== Printing DVD information ===
-	title: The Godfather
-	year: 1972
-	available: Yes
-	last rent date: none
-
-	=== Printing DVD information ===
-	title: The Godfather: Part II
-	year: 1974
-	available: Yes
-	last rent date: none
-
-	=== Printing DVD information ===
-	title: The Dark Night
-	year: 2008
-	available: Yes
-	last rent date: none
-
-	=== Printing DVD information ===
-	title: 12 Angry Men
-	year: 1957
-	available: Yes
-	last rent date: none
-
-	=== Printing DVD information ===
-	title: Schindler's List
-	year: 1993
-	available: Yes
-	last rent date: none
-
-	=== Printing DVD information ===
-	title: The Lord of the Rings: The Return of the King
-	year: 2003
-	available: Yes
-	last rent date: none
-
-	=== Printing DVD information ===
-	title: Pulp Fiction
-	year: 1994
-	available: Yes
-	last rent date: none
-
-	=== Printing DVD information ===
-	title: The Good, the Bad, and the Ugly
-	year: 1966
-	available: Yes
-	last rent date: none
-
-	=== Printing DVD information ===
-	title: The Lord of the Rings: The Fellowship of the Ring
-	year: 2001
-	available: Yes
-	last rent date: none
-
+	>=== Printing DVD information ===
+	>title: The Shawshank Redemption
+	>year: 1994
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: The Godfather
+	>year: 1972
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: The Godfather: Part II
+	>year: 1974
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: The Dark Night
+	>year: 2008
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: 12 Angry Men
+	>year: 1957
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: Schindler's List
+	>year: 1993
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: The Lord of the Rings: The Return of the King
+	>year: 2003
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: Pulp Fiction
+	>year: 1994
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: The Good, the Bad, and the Ugly
+	>year: 1966
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: The Lord of the Rings: The Fellowship of the Ring
+	>year: 2001
+	>available: Yes
+	>last rent date: none
+	>
 
 
  Bad Data case 1 (only newlines in input file):
@@ -277,7 +277,6 @@ last rent date: none
 
 	>Filename to open: input3.txt
 	>No lines with information to read.
-
 
  Bad Data case 2 (Non-integer data in some years in input file)
 	Input file (input5.txt) contents:
@@ -303,32 +302,30 @@ last rent date: none
 		ALPHA INVALID DATA
 		
 	>Filename to open: input5.txt
-	=== Printing DVD information ===
-	title: The Shawshank Redemption
-	year: 1994
-	available: Yes
-	last rent date: none
-
-	=== Printing DVD information ===
-	title: The Godfather
-	year: 1972
-	available: Yes
-	last rent date: none
-
-	=== Printing DVD information ===
-	title: The Godfather: Part II
-	year: 1974
-	available: Yes
-	last rent date: none
-
-	=== Printing DVD information ===
-	title: The Dark Night
-	year: 2008
-	available: Yes
-	last rent date: none
-
-
-
+	>=== Printing DVD information ===
+	>title: The Shawshank Redemption
+	>year: 1994
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: The Godfather
+	>year: 1972
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: The Godfather: Part II
+	>year: 1974
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: The Dark Night
+	>year: 2008
+	>available: Yes
+	>last rent date: none
+	>
 
  Bad Data case 3 (A couple newlines in between valid entries)
  	Input file (input6.txt) contents:
@@ -356,18 +353,18 @@ last rent date: none
 		2001
 
  	>Filename to open: input6.txt
-	=== Printing DVD information ===
-	title: The Shawshank Redemption
-	year: 1994
-	available: Yes
-	last rent date: none
-
-	=== Printing DVD information ===
-	title: The Godfather
-	year: 1972
-	available: Yes
-	last rent date: none
-
+	>=== Printing DVD information ===
+	>title: The Shawshank Redemption
+	>year: 1994
+	>available: Yes
+	>last rent date: none
+	>
+	>=== Printing DVD information ===
+	>title: The Godfather
+	>year: 1972
+	>available: Yes
+	>last rent date: none
+	>
 
  Discussion:
  	The program opens a text input file and reads it into up to 10 DVD object instances. If more than 10 DVDs are

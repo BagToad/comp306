@@ -40,23 +40,22 @@
 		2001
 	
 	>Filename to open: input1.txt
-	=== PRINTING STORED TEXT ===
-
-	The Dark Night
-	2008
-	12 Angry Men
-	1957
-	Schindler's List
-	1993
-	The Lord of the Rings: The Return of the King
-	2003
-	Pulp Fiction
-	1994
-	The Good, the Bad, and the Ugly
-	1966
-	The Lord of the Rings: The Fellowship of the Ring
-	2001
-
+	>=== PRINTING STORED TEXT ===
+	>
+	>The Dark Night
+	>2008
+	>12 Angry Men
+	>1957
+	>Schindler's List
+	>1993
+	>The Lord of the Rings: The Return of the King
+	>2003
+	>Pulp Fiction
+	>1994
+	>The Good, the Bad, and the Ugly
+	>1966
+	>The Lord of the Rings: The Fellowship of the Ring
+	>2001
 
  Normal case 2 (text data with newlines and special characters):
    Input file (input7.txt) contents:
@@ -76,48 +75,44 @@
 		!@#$%$^$&^&*^^&$!@#$%^&*(*&^%$#@#$%^&*()(*&^%$#@
 	
 	>Filename to open: input7.txt
-	=== PRINTING STORED TEXT ===
-
-	The quick brown
-
-	fox jumped
-
-	over the
-
-	lazy
-
-
-
-	dog
-	.
-
-	!@#$%$^$&^&*^^&$!@#$%^&*(*&^%$#@#$%^&*()(*&^%$#@
-
+	>=== PRINTING STORED TEXT ===
+	>
+	>The quick brown
+	>
+	>fox jumped
+	>
+	>over the
+	>
+	>lazy
+	>
+	>
+	>
+	>dog
+	>.
+	>
+	>!@#$%$^$&^&*^^&$!@#$%^&*(*&^%$#@#$%^&*()(*&^%$#@
 
  Normal case 3 (very long line of input text):
 	Input file (input8.txt) contents:
 		1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
 	
 	>Filename to open: input8.txt
-	=== PRINTING STORED TEXT ===
-
-	1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
-
+	>=== PRINTING STORED TEXT ===
+	>
+	>1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
 
  Bad Data case 1 (empty file):
  	Input file (input9.txt) is empty.
 
  	>Filename to open: input9.txt	
-	=== PRINTING STORED TEXT ===
-
+	>=== PRINTING STORED TEXT ===
 
  Bad Data case 2 (file does not exist):
 	Input file (inputdoesnotexists.txt) does not exist.
 
 	>Filename to open: inputdoesnotexist.txt
-	File does not exist!
-	=== PRINTING STORED TEXT ===
-
+	>File does not exist!
+	>=== PRINTING STORED TEXT ===
 
  Discussion:
  	The program will open an input file and load the contents in a Text class. The program will then print the text it stored.
