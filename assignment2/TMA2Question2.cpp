@@ -251,7 +251,7 @@ using namespace std;
 
 int main(void) {
 	const int ARRAY_NUM = 100;
-	const char INPUT_ALPHABET[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUV";
+	const char ALPHABET[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUV";
 
 	int* number = new int(1);
 	long* long_number = new long(10000);
@@ -261,7 +261,7 @@ int main(void) {
 
 	//Fill char array with alphabet
 	for (int i = 0; i < ARRAY_NUM; i++) {
-		chars[i] = INPUT_ALPHABET[i];
+		chars[i] = ALPHABET[i];
 	}
 
 	//Fill float array with values between 101 and 201.
