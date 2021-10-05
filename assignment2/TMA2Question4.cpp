@@ -12,8 +12,9 @@
  Text - Store the contents of a text file 
 
  Variables:
- in - fstream - a stream to read the text file. 
- filename - string - a string to hold the text file's filename. 
+ filename - string - a string to hold the text file's filename.
+ Text.input_text - string - a storage variable for the text read from the text file.
+ Text.line - string - a temporary store for the current line being read from the text file.
 */
 
 /*
@@ -124,7 +125,7 @@
 
 	If the input file is empty or does not exit, the program will still attept to print out the stored text when the 
 	Text.contents() method is called.
-	
+
     The program returns an int as per the C++ standard.
 
     All testing performed in a Linux environment with g++ version 7.5.0.
@@ -170,19 +171,11 @@ public:
 };
 
 int main(void) {
-	// ifstream in;
     string filename;
 
 	//Get the filename to open from the user.
 	cout << "Filename to open: ";
 	cin >> filename;
-	// in.open(filename);
-
- //    //Check if input file exists.
- //    if (! in) {
- //    	cout << "File does not exist!" << endl;
- //    	return 1;
- //    }
 
     Text t = Text(filename);
     t.contents();

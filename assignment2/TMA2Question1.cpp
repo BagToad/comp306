@@ -16,6 +16,10 @@
  filename - string - a string to hold the text file's filename. 
  inventory - DVD - an array of DVDs.
  count - int - the DVDs read from the input text file.
+ DVD.available - bool - a boolean to represent whether a DVD is current available or not.
+ DVD.last_rent_date - string - a string date representation of when the DVD was last rented out.  
+ DVD.year - int - the year the DVD was released.
+ DVD.title - string - the title of the DVD.
 
  Constants:
  NUM_DVD - int - The number of DVDs to read from input text file.
@@ -163,8 +167,6 @@ last rent date: none
 	year: 1966
 	available: Yes
 	last rent date: none
-
-	>
 
 
  Normal case 3 (> 10 DVDs):
@@ -375,6 +377,8 @@ last rent date: none
 
  	The title can be any combination of characters, but the year must be an integer. If the year is not an integer,
  	the offending DVD and all subsequent DVDs are not imported.
+
+ 	All DVDs are assumed to be available when imported. 
 	
     The program returns an int as per the C++ standard.
 
