@@ -55,19 +55,6 @@
 using namespace std;
 
 int main(void) {
-	ifstream in;
-	string filename;
-
-	//Get the filename to open from the user.
-	cout << "Filename to open: ";
-	cin >> filename;
-	in.open(filename);
-
-    //Check if input file exists.
-	if (! in) {
-		cout << "File does not exist!" << endl;
-		return 1;
-	}
 
 	return 0;
 }

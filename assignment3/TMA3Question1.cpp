@@ -51,24 +51,41 @@
 */
 
 #include <iostream>
+#include <chrono>
 
 using namespace std;
+using namespace std::chrono;
+
+int output (double first_double, double second_double) {
+	// int out = first_double * second_double;
+	// cout << first_double << " * " << second_double << " = " << out << endl;
+	return first_double * second_double;
+}
 
 int main(void) {
-	ifstream in;
-	string filename;
+	const int num_doubles = 10000;
+	const high_resolution_clock::time_point start_time = high_resolution_clock::now();
 
-	//Get the filename to open from the user.
-	cout << "Filename to open: ";
-	cin >> filename;
-	in.open(filename);
+	double first_doubles[num_doubles];
+	double second_doubles[num_doubles];
 
-    //Check if input file exists.
-	if (! in) {
-		cout << "File does not exist!" << endl;
-		return 1;
+	for (int i = 0; i <= num_doubles; i++) {
+		first_doubles[i] = i + 100;
+		second_doubles[i] = 10100 - i;
 	}
+	int out;
+	// for (int i = 0; i <= 100; i++){
+		for (int i = 0; i <= 10000; i++) {
+			out = output(first_doubles[i], second_doubles[i]);
+			cout << "output: " << out << endl;
+		}
+	// }
+	
+	//Adapted from http://www.cplusplus.com/reference/chrono/high_resolution_clock/now/
+	const high_resolution_clock::time_point stop_time = high_resolution_clock::now();
+	duration<double> time_span = duration_cast<duration<double>>(stop_time - start_time);
 
+	cout << "\n DURATION: "	<< time_span.count() << endl;
 	return 0;
 }
 
