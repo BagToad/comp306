@@ -54,11 +54,28 @@
 
 
 Discussion:
+	The program overloads the following operators: +, -, ++, --, and <<. The program implements the postfix/prefix variants
+	of the increment and decrement operators.
 
+	The program initializes and defines 3 sets of alphanumerically named DoStuff instances to test with. These instances are named a alpha 
+	character followed by a numeric character. The numeric portion of the variable names are incremented
+	depending on the test being performed. However, the output to the console to narrate the tests only refers to these variables by
+	the alpha character - this is to keep the output simple.   
+
+	The + and - operators were fairly easy to implement. The biggest revelation for me was understanding the impact of an operator being
+	a member function or not. My understanding is that a non-member function gets both operands as the arguements, while a member function
+	assumes that 'this' is the left operand.
+
+	The postfix and prefix operator variants were relatively straightforward. Saving the existing value before performing the operation
+	is very natural. 
+
+	The "<<" operator was the most difficult for me to wrap my head around. I believe it must be defined as a friend function because
+	the ostream class needs access to it; when the left operand is an ostream and the right operand is a DoStuff instance, the <<
+	operator is used to convert to an ostream&. 
 	
-    The program returns an int as per the C++ standard.
+   The program returns an int as per the C++ standard.
 
-    All testing performed in a Linux environment with g++ version 7.5.0.
+   All testing performed in a Linux environment with g++ version 7.5.0.
 */
 
 #include <iostream>
@@ -68,9 +85,11 @@ using namespace std;
 
 class DoStuff {
 	int value;
+	//Disable default constructor.
 	DoStuff() {};
-public:
 
+public:
+	//Create an instance of DoStuff.
 	DoStuff(int x) {
 		value = x;
 	}
