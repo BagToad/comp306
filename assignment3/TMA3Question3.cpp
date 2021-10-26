@@ -51,10 +51,68 @@
 */
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-int main(void) {
+class DoStuff {
+	int value;
+public:
 
+	DoStuff(int x) {
+		value = x;
+	}
+
+	void print(ostream& os) {
+		os << "value: " << value << endl;
+	}
+
+	const DoStuff operator+(const DoStuff& x) const {
+		return DoStuff(value + x.value);
+	}
+
+	const DoStuff operator-(const DoStuff& x) const {
+		return DoStuff(value - x.value);
+	}
+
+	const DoStuff operator++(int) {
+		DoStuff beforeValue(value);
+		value++;
+		return beforeValue;
+	}
+
+	const DoStuff operator++() {
+		value++;
+		return *this;
+	}
+
+	const DoStuff operator--(int) {
+		DoStuff beforeValue(value);
+		value--;
+		return beforeValue;
+	}
+
+	const DoStuff operator--() {
+		value--;
+		return *this;
+	}
+
+	friend ostream& operator<<(ostream& os, const DoStuff& s) {
+		return os << to_string(s.value);
+	}
+};
+
+int main(void) {
+	DoStuff thing1(1);
+	DoStuff thing2(2);
+	DoStuff thing3(3);
+	thing1 = thing1 - thing2 + thing3;
+	thing1.print(cout);
+
+	thing2++;
+	++thing2;
+	thing2.print(cout);
+
+	cout << "printing value of thing1: " << thing1 << endl;
 	return 0;
 }

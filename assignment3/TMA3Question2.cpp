@@ -10044,7 +10044,38 @@
  	 Average: 0.0610215
 
  Discussion:
+	The program performs the same function as TMA3Question1. That is, it loads two double arrays
+	with 10,000 values. The values are multiplied by eachother, then printed. The execution time
+	of the program is printed, then the program exits. This program adds the "inline" keyword to
+	the function to multiply doubles. 
+	
 
+	This program was challenging to develop because my expectations of the execution times were 
+	not met. I had expected that, since this is a program which makes 10,000 function calls,
+	I would see a consistent improvement in processing time by inlining that function. 
+
+	However, what I saw was inconsistent processing times. Many times the processing time was
+	lower without inlining the function as shown by comparing sample processing times between 
+	TMA3Question1 and TMA3Question2. Granted, in my sample of 10 executions each, inlining
+	the function improved the average processing time. However, the average processing time
+	was only improved by a small amount; with the current code, the average processing time 
+	was improved by 0.00248329.
+
+	During my investigation into why I wasn't getting noticably or consistently different results,
+	I discovered that the "inline" keyword is a compiler hint. That is, the compiler is still free
+	to optimize in whatever way it sees fit.
+
+	I dug into the manual pages for g++ (my compiler of choice), without much luck in finding an 
+	option to force g++ to always inline functions. 
+
+	Eventually, I did find an attribute which I could set on an individual function to force
+	g++ to inline the function (https://gcc.gnu.org/legacy-ml/gcc-help/2007-01/msg00051.html).
+	I added this to the code, but I still did not see any fantastic results.
+
+	Finally, I browsed the course forums and discovered many others have this issue. A common
+	excuse for why this may not produce noticable differences is that modern computers have 
+	more efficient mechanisms for calling functions. This means that a function call might not
+	produce as much overhead as it once did. 
 	
     The program returns an int as per the C++ standard.
 
