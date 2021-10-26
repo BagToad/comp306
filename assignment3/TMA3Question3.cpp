@@ -14,8 +14,6 @@
  in - fstream - a stream to read the text file. 
 
  Constants:
-
-
 */
 
 /*
@@ -24,22 +22,11 @@
  All test plans, unless noted, require an input file. 
 
 
- Normal case 1 ():
+ Normal case 1 (static program, no input):
+
+
+
  
-
- Normal case 2 ():
-	
-
- Normal case 3 ():
-	
-	
- Bad Data case 1 (only newlines in input file):
-	
-
- Bad Data case 2 (Non-integer data in some years in input file)
-	
-
- Bad Data case 3 (A couple newlines in between valid entries)
  	
 
  Discussion:
@@ -103,16 +90,22 @@ public:
 };
 
 int main(void) {
-	DoStuff thing1(1);
-	DoStuff thing2(2);
-	DoStuff thing3(3);
-	thing1 = thing1 - thing2 + thing3;
-	thing1.print(cout);
+	cout << "=== Testing overloaded + and - operators ===" << endl;
+	cout << "Values a = 5, b = 10, c = 15" << endl
+	cout << "Expression: a + b - c + a, should equal 5." << endl;
+	cout << "Result: " << (a + b - c + a) << endl;
+	// DoStuff a(5);
 
-	thing2++;
-	++thing2;
-	thing2.print(cout);
+	// DoStuff thing1(1);
+	// DoStuff thing2(2);
+	// DoStuff thing3(3);
+	// thing1 = thing1 - thing2 + thing3;
+	// thing1.print(cout);
 
-	cout << "printing value of thing1: " << thing1 << endl;
+	// thing2++;
+	// ++thing2;
+	// thing2.print(cout);
+
+	// cout << "printing value of thing1: " << thing1 << endl;
 	return 0;
 }
