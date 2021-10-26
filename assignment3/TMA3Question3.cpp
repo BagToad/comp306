@@ -2,7 +2,7 @@
  Title: TMA3Question3.cpp
  Description:
     Track DVD information. Import DVD data from a text file.
- Date: October 4, 2021
+ Date: October 26, 2021
  Author: Kynan Ware
  Student ID: 3431123 
  Compile: g++ TMA3Question3.cpp -o TMA3Question3.exe
@@ -125,18 +125,5 @@ int main(void) {
 	cout << "\nExpression: cout \"a = \" << a << \", b = \" << b << endl;" << endl;
 	cout << "Result: a = " << a3 << ", b = " << b3 << endl;
 
-	// DoStuff a(5);
-
-	// DoStuff thing1(1);
-	// DoStuff thing2(2);
-	// DoStuff thing3(3);
-	// thing1 = thing1 - thing2 + thing3;
-	// thing1.print(cout);
-
-	// thing2++;
-	// ++thing2;
-	// thing2.print(cout);
-
-	// cout << "printing value of thing1: " << thing1 << endl;
 	return 0;
 }
