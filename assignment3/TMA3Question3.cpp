@@ -90,14 +90,14 @@ public:
 };
 
 int main(void) {
-	DoStuff a(5);
-	DoStuff b(10);
-	DoStuff c(15);
+	DoStuff a1(5);
+	DoStuff b1(10);
+	DoStuff c1(15);
 
 	cout << "=== Testing overloaded + and - operators ===" << endl;
-	cout << "Values: a = 5, b = 10, c = 15" << endl
+	cout << "Values: a = 5, b = 10, c = 15" << endl;
 	cout << "Expression: a + b - c + a, should equal 5." << endl;
-	cout << "Result: " << (a + b - c + a) << endl;
+	cout << "Result: " << (a1 + b1 - c1 + a1) << endl;
 
 	DoStuff a(5);
 	DoStuff b(5);
