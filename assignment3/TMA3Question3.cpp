@@ -36,7 +36,7 @@ Result: 5
 
 Expression: ++b
 Result: 6
-\
+
 Expression: c--
 Result: 5
 
