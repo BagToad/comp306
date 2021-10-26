@@ -90,10 +90,24 @@ public:
 };
 
 int main(void) {
+	DoStuff a(5);
+	DoStuff b(10);
+	DoStuff c(15);
+
 	cout << "=== Testing overloaded + and - operators ===" << endl;
-	cout << "Values a = 5, b = 10, c = 15" << endl
+	cout << "Values: a = 5, b = 10, c = 15" << endl
 	cout << "Expression: a + b - c + a, should equal 5." << endl;
 	cout << "Result: " << (a + b - c + a) << endl;
+
+	DoStuff a(5);
+	DoStuff b(5);
+	DoStuff c(5);
+	DoStuff d(5);
+
+	cout << endl << "=== Testing postfix/prefix overloaded ++ and -- operators ===" << endl;
+	cout << "Values: a = 5, b = 5, c = 5, d = 5" << endl;
+	cout << "Expression: a++" << endl;
+	cout << "Result: " << a++ << endl;
 	// DoStuff a(5);
 
 	// DoStuff thing1(1);
