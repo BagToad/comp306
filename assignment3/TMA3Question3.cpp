@@ -9,10 +9,9 @@
  Execution: ./TMA3Question3.exe
  
  Classes:
-
+	
  Variables:
- in - fstream - a stream to read the text file. 
-
+	
  Constants:
 */
 
