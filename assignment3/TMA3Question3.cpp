@@ -99,15 +99,25 @@ int main(void) {
 	cout << "Expression: a + b - c + a, should equal 5." << endl;
 	cout << "Result: " << (a1 + b1 - c1 + a1) << endl;
 
-	DoStuff a(5);
-	DoStuff b(5);
-	DoStuff c(5);
-	DoStuff d(5);
+	DoStuff a2(5);
+	DoStuff b2(5);
+	DoStuff c2(5);
+	DoStuff d2(5);
 
+	//Test prefix and postfix operators. 
 	cout << endl << "=== Testing postfix/prefix overloaded ++ and -- operators ===" << endl;
 	cout << "Values: a = 5, b = 5, c = 5, d = 5" << endl;
-	cout << "Expression: a++" << endl;
-	cout << "Result: " << a++ << endl;
+	cout << "\nExpression: a++" << endl;
+	cout << "Result: " << a2++ << endl;
+	cout << "\nExpression: ++b" << endl;
+	cout << "Result: " << ++b2 << endl;
+	cout << "\nExpression: c--" << endl;
+	cout << "Result: " << c2-- << endl;
+	cout << "\nExpression: --d" << endl;
+	cout << "Result: " << --d2 << endl;
+
+
+
 	// DoStuff a(5);
 
 	// DoStuff thing1(1);
