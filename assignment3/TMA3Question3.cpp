@@ -96,7 +96,7 @@ int main(void) {
 
 	cout << "=== Testing overloaded + and - operators ===" << endl;
 	cout << "Values: a = 5, b = 10, c = 15" << endl;
-	cout << "\nExpression: a + b - c + a, should equal 5." << endl;
+	cout << "\nExpression: a + b - c + a" << endl;
 	cout << "Result: " << (a1 + b1 - c1 + a1) << endl;
 
 	DoStuff a2(5);
@@ -122,8 +122,8 @@ int main(void) {
 
 	cout << "\n===Testing overloaded << operator ===" << endl;
 	cout << "Values: a = 5" << endl;
-	cout << "\nExpression: cout \"a = \" << a << \", b = \" << b << endl;"
-	cout << "a = " << a3 << ", b = " << b << endl;
+	cout << "\nExpression: cout \"a = \" << a << \", b = \" << b << endl;" << endl;
+	cout << "Result: a = " << a3 << ", b = " << b3 << endl;
 
 	// DoStuff a(5);
 
