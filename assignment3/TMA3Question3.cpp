@@ -22,6 +22,32 @@
 
 
  Normal case 1 (static program, no input):
+=== Testing overloaded + and - operators ===
+Values: a = 5, b = 10, c = 15
+
+Expression: a + b - c + a
+Result: 5
+
+=== Testing postfix/prefix overloaded ++ and -- operators ===
+Values: a = 5, b = 5, c = 5, d = 5
+
+Expression: a++
+Result: 5
+
+Expression: ++b
+Result: 6
+\
+Expression: c--
+Result: 5
+
+Expression: --d
+Result: 4
+
+===Testing overloaded << operator ===
+Values: a = 5
+
+Expression: cout "a = " << a << ", b = " << b << endl;
+Result: a = 5, b = 15
 
 
 
