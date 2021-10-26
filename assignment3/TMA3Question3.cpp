@@ -68,6 +68,7 @@ using namespace std;
 
 class DoStuff {
 	int value;
+	DoStuff() {};
 public:
 
 	DoStuff(int x) {
