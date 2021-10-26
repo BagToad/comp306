@@ -9,52 +9,51 @@
  Execution: ./TMA3Question3.exe
  
  Classes:
+	DoStuff - A class to demonstrate operator overloading.
 	
  Variables:
-	
+	DoStuff.value - int - A class member variable used to test operator overloading.
+
+	a1, b1, c1 - DoStuff - Instances to test overloaded + and - operators using the DoStuff class. 
+	a2, b2, c2, d2 - DoStuff - Instances to test overloaded prefix/postfix ++ and -- operators using the DoStuff class.
+	a3, b3 - DoStuff - Instances to test overloaded << operator using the DoStuff class. 
  Constants:
+ 	None.
 */
 
 /*
  TEST PLAN
  
- All test plans, unless noted, require an input file. 
-
-
  Normal case 1 (static program, no input):
-=== Testing overloaded + and - operators ===
-Values: a = 5, b = 10, c = 15
+	>=== Testing overloaded + and - operators ===
+	>Values: a = 5, b = 10, c = 15
+	>
+	>Expression: a + b - c + a
+	>Result: 5
+	>
+	>=== Testing postfix/prefix overloaded ++ and -- operators ===
+	>Values: a = 5, b = 5, c = 5, d = 5
+	>
+	>Expression: a++
+	>Result: 5
+	>
+	>Expression: ++b
+	>Result: 6
+	>
+	>Expression: c--
+	>Result: 5
+	>
+	>Expression: --d
+	>Result: 4
+	>
+	>===Testing overloaded << operator ===
+	>Values: a = 5
+	>
+	>Expression: cout "a = " << a << ", b = " << b << endl;
+	>Result: a = 5, b = 15
 
-Expression: a + b - c + a
-Result: 5
 
-=== Testing postfix/prefix overloaded ++ and -- operators ===
-Values: a = 5, b = 5, c = 5, d = 5
-
-Expression: a++
-Result: 5
-
-Expression: ++b
-Result: 6
-
-Expression: c--
-Result: 5
-
-Expression: --d
-Result: 4
-
-===Testing overloaded << operator ===
-Values: a = 5
-
-Expression: cout "a = " << a << ", b = " << b << endl;
-Result: a = 5, b = 15
-
-
-
- 
- 	
-
- Discussion:
+Discussion:
 
 	
     The program returns an int as per the C++ standard.
