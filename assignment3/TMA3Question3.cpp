@@ -96,7 +96,7 @@ int main(void) {
 
 	cout << "=== Testing overloaded + and - operators ===" << endl;
 	cout << "Values: a = 5, b = 10, c = 15" << endl;
-	cout << "Expression: a + b - c + a, should equal 5." << endl;
+	cout << "\nExpression: a + b - c + a, should equal 5." << endl;
 	cout << "Result: " << (a1 + b1 - c1 + a1) << endl;
 
 	DoStuff a2(5);
@@ -105,7 +105,7 @@ int main(void) {
 	DoStuff d2(5);
 
 	//Test prefix and postfix operators. 
-	cout << endl << "=== Testing postfix/prefix overloaded ++ and -- operators ===" << endl;
+	cout << "\n=== Testing postfix/prefix overloaded ++ and -- operators ===" << endl;
 	cout << "Values: a = 5, b = 5, c = 5, d = 5" << endl;
 	cout << "\nExpression: a++" << endl;
 	cout << "Result: " << a2++ << endl;
@@ -117,6 +117,13 @@ int main(void) {
 	cout << "Result: " << --d2 << endl;
 
 
+	DoStuff a3(5);
+	DoStuff b3(15);
+
+	cout << "\n===Testing overloaded << operator ===" << endl;
+	cout << "Values: a = 5" << endl;
+	cout << "\nExpression: cout \"a = \" << a << \", b = \" << b << endl;"
+	cout << "a = " << a3 << ", b = " << b << endl;
 
 	// DoStuff a(5);
 
