@@ -17,8 +17,6 @@
 	a1, b1, c1 - DoStuff - Instances to test overloaded + and - operators using the DoStuff class. 
 	a2, b2, c2, d2 - DoStuff - Instances to test overloaded prefix/postfix ++ and -- operators using the DoStuff class.
 	a3, b3 - DoStuff - Instances to test overloaded << operator using the DoStuff class. 
- Constants:
- 	None.
 */
 
 /*
