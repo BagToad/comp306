@@ -64,8 +64,8 @@ Discussion:
 	a member function or not. My understanding is that a non-member function gets both operands as the arguements, while a member function
 	assumes that 'this' is the left operand.
 
-	The postfix and prefix operator variants were relatively straightforward. Saving the existing value before performing the operation
-	is very natural. 
+	The postfix and prefix operator variants were relatively straightforward. Saving the existing value before performing the prefix
+	operation is very natural. 
 
 	The "<<" operator was the most difficult for me to wrap my head around. I believe it must be defined as a friend function because
 	the ostream class needs access to it; when the left operand is an ostream and the right operand is a DoStuff instance, the <<
