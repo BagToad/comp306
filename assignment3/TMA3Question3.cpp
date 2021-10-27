@@ -175,10 +175,22 @@ int main(void) {
 	DoStuff b3(15);
 
 	//Test << operator. 
-	cout << "\n===Testing overloaded << operator ===" << endl;
+	cout << "\n=== Testing overloaded << operator ===" << endl;
 	cout << "Values: a = 5" << endl;
-	cout << "\nExpression: cout \"a = \" << a << \", b = \" << b << endl;" << endl;
+	cout << "\nExpression: cout << \"a = \" << a << \", b = \" << b << endl;" << endl;
 	cout << "Result: a = " << a3 << ", b = " << b3 << endl;
+
+	//Create test instances
+	DoStuff a4(5);
+	DoStuff b4(10);
+	DoStuff c4(1);
+	DoStuff d4(15);
+
+	//Test complex expressions
+	cout << "\n=== Testing a complex expression ===" << endl;
+	cout << "Values: a = 5, b = 10, c = 1, d = 15" << endl;
+	cout << "\nExpression: cout << a + b + c - d << c++ << d-- << --a << --b" << endl;
+	cout << "Result: " << a + b + c - d << c++ << d-- << --a << --b << endl;
 
 	return 0;
 }
