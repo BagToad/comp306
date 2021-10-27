@@ -186,7 +186,15 @@ int main(void) {
 	DoStuff c4(1);
 	DoStuff d4(15);
 
-	//Test complex expressions
+	/*
+		Test complex expressions.
+		Expected output is 1:1:15:4:9
+		a + b + c - d = 5 + 10 + 1 - 15 = 1
+		c++ = 2, but is prefix, so output should be 1 instead.
+		d4-- = 14, but is prefix, so output should be 15 instead.
+		--a4 = 4, since postfix, output should be 4 as well.
+		--b4 = 9, since postfix, output should be 9 as well.
+	*/
 	cout << "\n=== Testing a complex expression ===" << endl;
 	cout << "Values: a = 5, b = 10, c = 1, d = 15" << endl;
 	cout << "\nExpression: cout << a + b + c - d << \":\" << c++ << \":\" << d-- << \":\" << --a << \":\" << --b" << endl;
