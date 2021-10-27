@@ -49,6 +49,12 @@
 	>
 	>Expression: cout "a = " << a << ", b = " << b << endl;
 	>Result: a = 5, b = 15
+	=== Testing a complex expression ===
+Values: a = 5, b = 10, c = 1, d = 15
+
+Expression: cout << a + b + c - d << ":" << c++ << ":" << d-- << ":" << --a << ":" << --b
+Result: 1:1:15:4:9
+
 
 
 Discussion:
