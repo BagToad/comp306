@@ -1,7 +1,7 @@
 /* 
  Title: TMA3Question3.cpp
  Description:
-    Track DVD information. Import DVD data from a text file.
+    Demonstrate and test operator overloading.
  Date: October 26, 2021
  Author: Kynan Ware
  Student ID: 3431123 
