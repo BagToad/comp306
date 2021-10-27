@@ -189,8 +189,8 @@ int main(void) {
 	//Test complex expressions
 	cout << "\n=== Testing a complex expression ===" << endl;
 	cout << "Values: a = 5, b = 10, c = 1, d = 15" << endl;
-	cout << "\nExpression: cout << a + b + c - d << c++ << d-- << --a << --b" << endl;
-	cout << "Result: " << a4 + b4 + c4 - d4 << c4++ << d4-- << --a4 << --b4 << endl;
+	cout << "\nExpression: cout << a + b + c - d << \":\" << c++ << \":\" << d-- << \":\" << --a << \":\" << --b" << endl;
+	cout << "Result: " << a + b + c - d << ":" << c++ << ":" << d-- << ":" << --a << ":" << --b << endl;
 
 	return 0;
 }
