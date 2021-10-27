@@ -61,21 +61,22 @@ Discussion:
 	The program overloads the following operators: +, -, ++, --, and <<. The program implements the postfix/prefix variants
 	of the increment and decrement operators.
 
-	The program initializes and defines 3 sets of alphanumerically named DoStuff instances to test with. These instances are named a alpha 
-	character followed by a numeric character. The numeric portion of the variable names are incremented
-	depending on the test being performed. However, the output to the console to narrate the tests only refers to these variables by
-	the alpha character - this is to keep the output simple.   
+	The program initializes and defines 4 sets of alphanumerically named DoStuff instances to test with.
+	These instances are named a alpha character followed by a numeric character. 
+	The numeric portion of the variable names are incremented for each testing group.
+	However, the output to the console to narrate the tests only refers to these variables by	the alpha
+	character - this is to keep the output simple.   
 
-	The + and - operators were fairly easy to implement. The biggest revelation for me was understanding the impact of an operator being
-	a member function or not. My understanding is that a non-member function gets both operands as the arguements, while a member function
-	assumes that 'this' is the left operand.
+	The + and - operators were fairly easy to implement. The biggest revelation for me was understanding
+	the impact of an operator being a member function or not. My understanding is that a non-member
+	function gets both operands as the arguements, while a member function assumes that 'this' is the left operand.
 
-	The postfix and prefix operator variants were relatively straightforward. Saving the existing value before performing the prefix
-	operation is very natural. 
+	The postfix and prefix operator variants were relatively straightforward. Saving the existing
+	value before performing the prefix operation comes naturally.
 
-	The "<<" operator was the most difficult for me to wrap my head around. I believe it must be defined as a friend function because
-	the ostream class needs access to it; when the left operand is an ostream and the right operand is a DoStuff instance, the <<
-	operator is used to convert to an ostream&. 
+	The "<<" operator was the most difficult for me to wrap my head around. I believe it must be defined
+	as a friend function because the ostream class needs access to it; when the left operand is an 
+	ostream and the right operand is a DoStuff instance, the <<	operator is used to convert to an ostream&. 
 	
 	The program returns an int as per the C++ standard.
 	
@@ -195,11 +196,17 @@ int main(void) {
 	/*
 		Test complex expressions.
 		Expected output is 1:1:15:4:9
-		a + b + c - d = 5 + 10 + 1 - 15 = 1
-		c++ = 2, but is prefix, so output should be 1 instead.
-		d4-- = 14, but is prefix, so output should be 15 instead.
-		--a4 = 4, since postfix, output should be 4 as well.
-		--b4 = 9, since postfix, output should be 9 as well.
+		Here is a breakdown of why this is the expected output of each expression component.
+
+		#1: a + b + c - d = 5 + 10 + 1 - 15 = 1
+		#2: c++ = 2, but is prefix, so output should be 1 instead.
+		#3: d4-- = 14, but is prefix, so output should be 15 instead.
+		#4: --a4 = 4, since postfix, output should be 4 as well.
+		#5: --b4 = 9, since postfix, output should be 9 as well.
+
+		Additionally, this is the expected output because the << operator concatenates the DoStuff stored value
+		as if it were a string. So each expression component is evaluated and added to the ostream, which is finally
+		output to cout. The colons between expression components is to improve readability. 
 	*/
 	cout << "\n=== Testing a complex expression ===" << endl;
 	cout << "Values: a = 5, b = 10, c = 1, d = 15" << endl;
