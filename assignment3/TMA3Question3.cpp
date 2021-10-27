@@ -71,9 +71,9 @@ Discussion:
 	the ostream class needs access to it; when the left operand is an ostream and the right operand is a DoStuff instance, the <<
 	operator is used to convert to an ostream&. 
 	
-   The program returns an int as per the C++ standard.
-
-   All testing performed in a Linux environment with g++ version 7.5.0.
+	The program returns an int as per the C++ standard.
+	
+	All testing performed in a Linux environment with g++ version 7.5.0.
 */
 
 #include <iostream>
