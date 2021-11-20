@@ -31,8 +31,8 @@
 using namespace std;
 
 class Rodent {
-	
-}
+
+};
 
 
 int main(void) {

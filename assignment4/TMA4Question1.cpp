@@ -20,13 +20,59 @@
  TEST PLAN
  
  Discussion:
-	The program loads two double arrays with 10,000 values. The values 
-	are multiplied by eachother, then printed. The execution time of 
-	the program is printed, then the program exits.
-	
-   The program returns an int as per the C++ standard.
+	The program implements a class hierarchy for shapes. The base class is Shape, which is
+	inherited by the Square, Circle, and Triangle classes.
 
-   All testing performed in a Linux environment with g++ version 7.5.0.
+	I'm not sure if the Shape class counts as a pure abstract base class because
+	I have found conflicting defintions about what a pure abstract class is. I believe that a 
+	pure abstract class must have all virtual functions, which it does. In addition, to reinforce
+	that this class is abstract, I have made the contructor protected. I did this so that the
+	inherited shapes can benefit from code reuse for the Shape's name. The idea is that 
+	each subclass must list the Shape's constructor in it's initilizer list to initilize the
+	Shape's name. The Shape class could be considered less abstract when viewing the display
+	and setBounds functions. I put these in the base class so the inherited classes can benefit
+	from code reuse. For example, every inherited shape will always print its name, bounding
+	box dimensions, and call the area function (area function is overloaded in subclass).
+
+	I'm hoping that my justifcation here describes how the Shape class is abstract enough,
+	but that the changes made towards a concrete class are done intentionally to reuse code.
+
+	Like I've seen in some forum postings, I noticed that the square provided by
+	the assignment is not a real square. I decided that the program would simply
+	attempt to deal with it, regardless of valid dimensions. However, I attempted to 
+	include logic for validating the square. I also added this information to the 
+	square's display function. I know that this validation is flawed somewhere; all it
+	validates is that the distance between each vertice are equal, and that this number
+	is equal to the square root of the sum of all distnaces. I have a feeling that
+	this validation logic doesn't work in some cases, but since it's not the focus 
+	of the assignment, I didn't delve too deep into it. 
+
+	I also added validation for the triangle, even though the triangle dimensions provided 
+	are valid. The triangle validation logic is to check if the sum of two sides is ever
+	less than the remaining side. If it is, the triangle is invalid. 
+
+	The bounding box logic also proved to be somewhat complicated. I attempted to look online
+	for formulas, but I couldn't find anything straight forward. Instead, I tried to implement
+	my own logic. This is also where the Shape class becomes less abstract because it implements
+	a function to set a shape's bounding box. So, the responsibility of the subclass is to 
+	determine its own bounding box and set the vertices accordingly by calling Shape::setBounds.
+
+	Another implementation detail worth discussing is the use of arrays as function parameters.
+	Very often, because C++ passes arrays as references, I contemplated having multiple
+	paramters instead of passing an array of points. I contemplated this because I find working
+	with pointers and references a bit complicated. However, I'm pleased that I worked through
+	it because I think the code is much nicer now. It makes more sense to me to build an array
+	of points, then send that as a parameter. However, I recognize that some people may prefer
+	having individual parameters. After all, that might make the interfaces more readable. 
+	At the end of the day, I think it boils down to style preference and maybe there are some
+	concerns about efficiency that I am unaware of.  
+
+	I also implemented an additional distance function in the Point class. This was to make
+	all the validation calculations much easier because all validation logic requires
+	determining the length of sides.
+
+ 	The program returns an int as per the C++ standard.
+ 	All testing performed in a Linux environment with g++ version 7.5.0.
 */
 
 #include <iostream> //iostream provides io.
@@ -290,14 +336,14 @@ int main(void) {
 	c.display();
 
 	cout << "\n====TEST INVALID SQUARE SHAPE====" << endl;
-	Point s_points[4] = {
+	Point s1_points[4] = {
 		Point(5, -5),
 		Point(-10, 7),
 		Point(4, 23),
 		Point(-6, 12)
 	};
-	Square s(s_points);
-	s.display();
+	Square s1(s1_points);
+	s1.display();
 
 
 	cout << "\n====TEST VALID SQUARE SHAPE====" << endl;
@@ -311,12 +357,21 @@ int main(void) {
 	s2.display();
 
 	cout << "\n====TEST VALID TRIANGLE SHAPE====" << endl;
-	Point t_points[3] = {
+	Point t1_points[3] = {
 		Point(0, 0),
 		Point(10, 10),
 		Point(-15, 15)
 	};
-	Triangle t(t_points);
-	t.display();
+	Triangle t1(t1_points);
+	t1.display();
+
+	cout << "\n====TEST INVALID TRIANGLE SHAPE====" << endl;
+	Point t2_points[3] = {
+		Point(0, 0),
+		Point(10, 10),
+		Point(-15, -15)
+	};
+	Triangle t2(t2_points);
+	t2.display();
 	return 0;
 }
