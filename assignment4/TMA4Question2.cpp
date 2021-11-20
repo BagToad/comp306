@@ -20,9 +20,6 @@
  TEST PLAN
  
  Discussion:
-	The program loads two double arrays with 10,000 values. The values 
-	are multiplied by eachother, then printed. The execution time of 
-	the program is printed, then the program exits.
 	
    The program returns an int as per the C++ standard.
 
@@ -32,6 +29,11 @@
 #include <iostream> //iostream provides io.
 
 using namespace std;
+
+class Rodent {
+	
+}
+
 
 int main(void) {
 	

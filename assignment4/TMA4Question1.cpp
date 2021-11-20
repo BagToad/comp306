@@ -31,10 +31,11 @@
 
 #include <iostream> //iostream provides io.
 #include <string>   //string provides string methods.
-#include <math.h>     //math provides math methods.
+#include <math.h>   //math provides math methods.
 
 using namespace std;
 
+//Implement a point on a catersian plane. 
 class Point {
 private:
 	int x;
@@ -46,6 +47,7 @@ public:
 		this->y = y;
 	}
 
+	//Instantiate a Point object with no coordinates.
 	Point() {
 		this->x = 0;
 		this->y = 0;
@@ -86,6 +88,7 @@ public:
 	}
 };
 
+//Implement a pure abstract shape class. 
 class Shape {
 private:
 	Point bounds [4];
@@ -117,6 +120,7 @@ public:
 	//Get the circumference of the shape.
 	virtual double circumference() { return 0; }
 
+	//Display the shape's characteristics. 
 	virtual void display() {
 		cout << "Name: " << name << endl;
 		cout << "Bounding box points (x, y): " << endl;
@@ -246,7 +250,7 @@ public:
 
 	//Return the triangle's area. 
 	double area() {
-		//Use Heron's Formula.
+		//Use Heron's Formula to determine triangle area from 3 side lengths.
 		int a = corners[0].distance(corners[2]);
 		int b = corners[0].distance(corners[1]);
 		int c = corners[1].distance(corners[2]);
@@ -273,7 +277,6 @@ public:
 };
 
 int main(void) {
-
 	cout << "====TEST POINT OPERATORS====" << endl;
 	cout << "Setting values: " << "p1 = Point(10, 20), p2 = Point(10, 20)" << endl;
 	Point p1 = Point(10, 20);
