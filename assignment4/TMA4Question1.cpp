@@ -296,7 +296,7 @@ int main(void) {
 	Point t_points[3] = {
 		Point(0, 0),
 		Point(10, 10),
-		Point(-15, -15)
+		Point(-15, 15)
 	};
 	Triangle t(t_points);
 	t.display();
