@@ -241,6 +241,7 @@ public:
 		int a = corners[0].distance(corners[2]);
 		int b = corners[0].distance(corners[1]);
 		int c = corners[1].distance(corners[2]);
+		cout << "a: " << a << ", b: " << b << ", c: " << c << endl;
 		int s = (a + b + c) / 2;
 		int area = sqrt(s * (s - a) * (s - b) * (s - c));
 		return area;
