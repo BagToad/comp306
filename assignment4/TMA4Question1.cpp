@@ -49,7 +49,12 @@
 
 	I also added validation for the triangle, even though the triangle dimensions provided 
 	are valid. The triangle validation logic is to check if the sum of two sides is ever
-	less than the remaining side. If it is, the triangle is invalid. 
+	less than the remaining side. If it is, the triangle is invalid. However, in my testing,
+	I discovered that it is likely impossible to make this happen if creating a triangle based on
+	points on a cartesia plane. Because the program determines the lengths of sides itself,
+	the side lengths will always form a triangle as long as the program is correctly determining
+	the distance between points. There is also the case of two or more points overlapping, but
+	I did not account for that. They still report as valid if that is the case. 
 
 	The bounding box logic also proved to be somewhat complicated. I attempted to look online
 	for formulas, but I couldn't find anything straight forward. Instead, I tried to implement
@@ -288,7 +293,7 @@ public:
 		int a = corners[0].distance(corners[2]);
 		int b = corners[0].distance(corners[1]);
 		int c = corners[2].distance(corners[1]);
-		if (a + b < c || a + c < b || b + c < a) {
+		if ((a + b) < c || (a + c) < b || (b + c) < a) {
 			valid = false;
 		}
 
@@ -365,11 +370,11 @@ int main(void) {
 	Triangle t1(t1_points);
 	t1.display();
 
-	cout << "\n====TEST INVALID TRIANGLE SHAPE====" << endl;
+	cout << "\n====TEST TRIANGLE SHAPE VALIDATION LIMITS====" << endl;
 	Point t2_points[3] = {
-		Point(0, 0),
-		Point(10, 10),
-		Point(-15, -15)
+		Point(56880, -120),
+		Point(77, 24),
+		Point(-15, -100)
 	};
 	Triangle t2(t2_points);
 	t2.display();
