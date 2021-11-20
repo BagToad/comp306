@@ -63,14 +63,11 @@ public:
 
 	//Return distance between two points.
 	int distance(Point p) {
-		// Point diff = *this - p;
 		//Use Pythagorean theorem to calculate distance between points. 
 		int a = x - p.getX();
 		int b = y - p.getY();
 		int c = sqrt(pow(a, 2) + pow(b, 2));
 		return c;
-		// Point diff(abs(x) - abs(p.getX()), abs(y) - abs(p.getY()));
-		// return abs(diff.getY() + diff.getX()); 
 	}
 
 	//Print the point values of a point in x, y form.
@@ -94,21 +91,21 @@ private:
 	Point bounds [4];
 	string name; 
 protected:
-
 	const double PI = 3.141592;
 
+	//Set the shape's bounding box.
 	bool setBounds(Point points[4]) {
 		for (int i = 0; i <= 3; i++) {
 			bounds[i] = points[i];
 		}
 	}
 
-public:
 	//Create an instance of Shape. 
 	Shape(string name) {
 		this->name = name;
 	}
 
+public:
 	//Get a Point array depicting the four corners of the bounding box. 
 	Point* getBounds() {
 		return bounds;
@@ -181,7 +178,8 @@ public:
 			this->corners[i] = corners[i];
 		}
 
-		//Determine the validity of the square. 
+		//Determine the validity of the square.
+		//All sides should equal the square root of the sum of all sides.
 		int sqrt_area = sqrt(area());
 		if (sqrt_area != corners[0].distance(corners[1]) ||
 			sqrt_area != corners[1].distance(corners[2]) ||
@@ -217,6 +215,7 @@ public:
 class Triangle : Shape {
 private:
 	Point corners[3];
+	bool valid = true;
 public:
 	//Create an instance of Triangle.
 	Triangle(Point corners[3]) : Shape("Triangle"), corners() {
@@ -233,6 +232,16 @@ public:
 		for (int i = 0; i <= 2; i++) {
 			this->corners[i] = corners[i];
 		}
+
+		//Determine the validity of the triangle.
+		//The sum of any two sides must be greater than the remaining side. 
+		int a = corners[0].distance(corners[2]);
+		int b = corners[0].distance(corners[1]);
+		int c = corners[2].distance(corners[1]);
+		if (a + b < c || a + c < b || b + c < a) {
+			valid = false;
+		}
+
 	}
 
 	//Return the triangle's area. 
@@ -241,7 +250,6 @@ public:
 		int a = corners[0].distance(corners[2]);
 		int b = corners[0].distance(corners[1]);
 		int c = corners[1].distance(corners[2]);
-		cout << "a: " << a << ", b: " << b << ", c: " << c << endl;
 		int s = (a + b + c) / 2;
 		int area = sqrt(s * (s - a) * (s - b) * (s - c));
 		return area;
@@ -250,6 +258,13 @@ public:
 	//Display the triangle's characteristics.
 	void display() {
 		Shape::display();
+		cout << "Valid triangle?: ";
+		if (valid == true) {
+			cout << "true";
+		} else {
+			cout << "false";
+		}
+		cout << endl;
 		cout << "Triangle vertice points (x, y): " << endl;
 		for (int i = 0; i <= 2; i++) {
 			cout << "p" << i + 1 << ": " << corners[i] << endl;
@@ -267,7 +282,7 @@ int main(void) {
 	cout << p1 + p2 - p2 << endl;
 
 	cout << "\n====TEST CIRCLE SHAPE====" << endl;
-	Circle c(Point(10, 20), 5);
+	Circle c(Point(10, -5), 23);
 	c.circumference();
 	c.display();
 
