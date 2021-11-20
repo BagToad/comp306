@@ -61,9 +61,16 @@ public:
 		return this->y;
 	}
 
+	//Return distance between two points.
 	int distance(Point p) {
-		Point diff = *this - p;
-		return diff.getY() + diff.getX(); 
+		// Point diff = *this - p;
+		//Use Pythagorean theorem to calculate distance between points. 
+		int a = x - p.getX();
+		int b = y - p.getY();
+		int c = sqrt(pow(a, 2) + pow(b, 2));
+		return c;
+		// Point diff(abs(x) - abs(p.getX()), abs(y) - abs(p.getY()));
+		// return abs(diff.getY() + diff.getX()); 
 	}
 
 	//Print the point values of a point in x, y form.
@@ -84,22 +91,18 @@ public:
 
 class Shape {
 private:
-	Point bounds [4] = { Point(0, 0), Point(0, 0), Point(0, 0), Point(0, 0) };
+	Point bounds [4];
 	string name; 
 protected:
 
 	const double PI = 3.141592;
 
 	bool setBounds(Point points[4]) {
-		// cout << sizeof(points) << " / " << sizeof(points[0]) << endl;
-		// if ((sizeof(*points)/sizeof(points[0])) != 4) {
-		// 	cout << "Invalid bounding box!" << endl;
-		// 	return false;
-		// }
 		for (int i = 0; i <= 3; i++) {
 			bounds[i] = points[i];
 		}
 	}
+
 public:
 	//Create an instance of Shape. 
 	Shape(string name) {
@@ -132,7 +135,6 @@ class Circle : public Shape {
 private: 
 	Point center;
 	double radius;
-	bool valid = true;
 public:
 	//Create an instance of Circle.
 	Circle(Point center, double radius) : Shape("Circle"), center(center), radius(radius) {
@@ -144,8 +146,6 @@ public:
 			Point(center.getX() + radius, center.getY() - radius)
 		};
 		Shape::setBounds(points);
-
-
 	}
 
 	//Return the area of the Circle.
@@ -169,10 +169,90 @@ public:
 class Square : public Shape {
 private: 
 	Point corners[4];
+	bool valid = true;
 public:
-	Square(Point corners[4]) : Shape("Square"), corners(){
-		//Identify bounding box.
+	//Create an instance of square. 
+	Square(Point corners[4]) : Shape("Square"), corners() {
+		//Identify bounding box - can be same as square dimensions.
 		Shape::setBounds(corners);
+
+		//Initialize corners.
+		for (int i = 0; i <= 3; i++) {
+			this->corners[i] = corners[i];
+		}
+
+		//Determine the validity of the square. 
+		int sqrt_area = sqrt(area());
+		if (sqrt_area != corners[0].distance(corners[1]) ||
+			sqrt_area != corners[1].distance(corners[2]) ||
+			sqrt_area != corners[2].distance(corners[3]) ||
+			sqrt_area != corners[3].distance(corners[0])){
+			valid = false;
+		} 
+	}
+
+	//Return the square's area. 
+	double area() {
+		return pow(corners[0].distance(corners[1]), 2);
+	}
+
+	//Print the square's characteristics. 
+	void display() {
+		Shape::display();
+		cout << "Valid square?: ";
+		if (valid == true) {
+			cout << "true";
+		} else {
+			cout << "false";
+		}
+		cout << endl;
+		cout << "Square vertice points (x, y): " << endl;
+		for (int i = 0; i <= 3; i++) {
+			cout << "p" << i + 1 << ": " << corners[i] << endl;
+		}
+	}
+};
+
+//Implement a triangle shape.
+class Triangle : Shape {
+private:
+	Point corners[3];
+public:
+	//Create an instance of Triangle.
+	Triangle(Point corners[3]) : Shape("Triangle"), corners() {
+		//Identify bounding box.
+		Point points[4] = {
+			Point(corners[2].getX(), corners[0].getY()),
+			Point(corners[1].getX(), corners[0].getY()),
+			Point(corners[1]),
+			Point(corners[2])
+		};
+		Shape::setBounds(points);
+
+		//Initialize corners.
+		for (int i = 0; i <= 2; i++) {
+			this->corners[i] = corners[i];
+		}
+	}
+
+	//Return the triangle's area. 
+	double area() {
+		//Use Heron's Formula.
+		int a = corners[0].distance(corners[2]);
+		int b = corners[0].distance(corners[1]);
+		int c = corners[1].distance(corners[2]);
+		int s = (a + b + c) / 2;
+		int area = sqrt(s * (s - a) * (s - b) * (s - c));
+		return area;
+	}
+
+	//Display the triangle's characteristics.
+	void display() {
+		Shape::display();
+		cout << "Triangle vertice points (x, y): " << endl;
+		for (int i = 0; i <= 2; i++) {
+			cout << "p" << i + 1 << ": " << corners[i] << endl;
+		}
 	}
 };
 
@@ -190,9 +270,34 @@ int main(void) {
 	c.circumference();
 	c.display();
 
-	cout << "\n====TEST SQUARE SHAPE====" << endl;
-	Point s_points[4] = { Point(5, -5), Point(-10, 7), Point(4, 23), Point(-6, 12) };
+	cout << "\n====TEST INVALID SQUARE SHAPE====" << endl;
+	Point s_points[4] = {
+		Point(5, -5),
+		Point(-10, 7),
+		Point(4, 23),
+		Point(-6, 12)
+	};
 	Square s(s_points);
 	s.display();
+
+
+	cout << "\n====TEST VALID SQUARE SHAPE====" << endl;
+	Point s2_points[4] = {
+		Point(-5, 5),
+		Point(5, 5),
+		Point(5, -5),
+		Point(-5, -5)
+	};
+	Square s2(s2_points);
+	s2.display();
+
+	cout << "\n====TEST VALID TRIANGLE SHAPE====" << endl;
+	Point t_points[3] = {
+		Point(0, 0),
+		Point(10, 10),
+		Point(-15, -15)
+	};
+	Triangle t(t_points);
+	t.display();
 	return 0;
 }
