@@ -77,31 +77,23 @@ class Hamster : public Rodent {
 
 
 int main(void) {
-	//Make an array of Rodents.
-	// Rodent rodents[10];
-	// for (int i = 0; i < 10; i++) {
-	// 	if (i % 3 == 1) {
-	// 		cout << "made mouse" << endl;
-	// 		rodents[i] = Mouse();
-	// 	} else if (i % 3 == 2) {
-	// 		rodents[i] = Gerbil();
-	// 		cout << "made Gerbil" << endl;
-	// 	} else {
-	// 		rodents[i] = Hamster();
-	// 		cout << "made ham" << endl;
-	// 	}
-	// }
-	// cout << rodents[0].getSpecies() << endl;
-
-
-	Rodent r = Mouse();
-	cout << r.getSpecies() << endl;
+	// Make an array of Rodents.
+	Rodent *rodents[10];
+	for (int i = 0; i < 10; i++) {
+		if (i % 3 == 1) {
+			rodents[i] = new Mouse();
+		} else if (i % 3 == 2) {
+			rodents[i] = new Gerbil();
+		} else {
+			rodents[i] = new Hamster();
+		}
+	}
 
 	//Describe each rodent in array of rodents.
-	// for (int i = 0; i < 10; i++) {
-	// 	cout << "===Rodent #" << i + 1 << " Characteristics===" << endl;
-	// 	cout << "Species: " << rodents[i]->getSpecies() << endl;
-	// 	cout << "Tail length: " << rodents[i]->getTailLength() << endl;
-	// }
+	for (int i = 0; i < 10; i++) {
+		cout << "===Rodent #" << i + 1 << " Characteristics===" << endl;
+		cout << "Species: " << rodents[i]->getSpecies() << endl;
+		cout << "Tail length: " << rodents[i]->getTailLength() << endl;
+	}
 	return 0;
 }
