@@ -1,8 +1,9 @@
 /* 
  Title: TMA4Question1.cpp
  Description:
+ 	Implement a class hierarchy of shapes using a abstract base shape class. 
   
- Date: Nov 18, 2021
+ Date: Nov 20, 2021
  Author: Kynan Ware
  Student ID: 3431123
  Compile: g++ TMA4Question1.cpp -o TMA4Question1.exe
@@ -18,6 +19,83 @@
 
 /*
  TEST PLAN
+(No input, static program)
+
+====TEST POINT OPERATORS====
+Setting values: p1 = Point(10, 20), p2 = Point(10, 20)
+Expression: cout << p1 + p2 - p2
+10, 20
+
+====TEST CIRCLE SHAPE====
+Name: Circle
+Bounding box points (x, y): 
+p1: -13, 18
+p2: 33, 18
+p3: -13, -28
+p4: 33, -28
+Shape area: 1661.9
+Circumference: 144.513
+Center point (x, y): 10, -5
+Radius: 23
+
+====TEST INVALID SQUARE SHAPE====
+Name: Square
+Bounding box points (x, y): 
+p1: 5, -5
+p2: -10, 7
+p3: 4, 23
+p4: -6, 12
+Shape area: 361
+Valid square?: false
+Square vertice points (x, y): 
+p1: 5, -5
+p2: -10, 7
+p3: 4, 23
+p4: -6, 12
+
+====TEST VALID SQUARE SHAPE====
+Name: Square
+Bounding box points (x, y): 
+p1: -5, 5
+p2: 5, 5
+p3: 5, -5
+p4: -5, -5
+Shape area: 100
+Valid square?: true
+Square vertice points (x, y): 
+p1: -5, 5
+p2: 5, 5
+p3: 5, -5
+p4: -5, -5
+
+====TEST VALID TRIANGLE SHAPE====
+Name: Triangle
+Bounding box points (x, y): 
+p1: -15, 0
+p2: 10, 0
+p3: 10, 10
+p4: -15, 15
+Shape area: 146
+Valid triangle?: true
+Triangle vertice points (x, y): 
+p1: 0, 0
+p2: 10, 10
+p3: -15, 15
+
+====TEST TRIANGLE SHAPE VALIDATION LIMITS====
+Name: Triangle
+Bounding box points (x, y): 
+p1: -15, -120
+p2: 77, -120
+p3: 77, 24
+p4: -15, -100
+Shape area: 24559
+Valid triangle?: true
+Triangle vertice points (x, y): 
+p1: 56880, -120
+p2: 77, 24
+p3: -15, -100
+
  
  Discussion:
 	The program implements a class hierarchy for shapes. The base class is Shape, which is

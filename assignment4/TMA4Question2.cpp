@@ -31,9 +31,6 @@
 using namespace std;
 
 class Rodent {
-// private:
-// 	//Create an intance of Rodent (abstract, does nothing)
-// 	Rodent();
 public:
 	//Return the rodent species.
 	virtual string getSpecies() {return "";}
