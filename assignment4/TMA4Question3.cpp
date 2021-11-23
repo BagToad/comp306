@@ -295,7 +295,7 @@ int main(void) {
 	cout << "====START TEST INT STORAGE IN CUSTOM SET====" << endl;
 	Set<int> custom_int_set;
 
-	//Test inserting multiple strings.
+	//Test inserting multiple ints.
 	custom_int_set.insert(1);
 	custom_int_set.insert(1000);
 	custom_int_set.insert(565656);
@@ -328,7 +328,7 @@ int main(void) {
 	cout << "====START TEST INT STORAGE IN STD SET====" << endl;
 	set<int> standard_int_set;
 
-	//Test inserting multiple strings.
+	//Test inserting multiple ints.
 	standard_int_set.insert(1);
 	standard_int_set.insert(1000);
 	standard_int_set.insert(565656);
@@ -361,7 +361,7 @@ int main(void) {
 	cout << "====START TEST DOUBLE STORAGE IN CUSTOM SET====" << endl;
 	Set<double> custom_double_set;
 
-	//Test inserting multiple strings.
+	//Test inserting multiple doubles.
 	custom_double_set.insert(1.101);
 	custom_double_set.insert(5.05);
 	custom_double_set.insert(65215.05132);
@@ -394,7 +394,7 @@ int main(void) {
 	cout << "====START TEST double STORAGE IN STD SET====" << endl;
 	set<double> standard_double_set;
 
-	//Test inserting multiple strings.
+	//Test inserting multiple doubles.
 	standard_double_set.insert(1);
 	standard_double_set.insert(1000);
 	standard_double_set.insert(565656);
