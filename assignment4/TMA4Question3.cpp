@@ -32,6 +32,7 @@
 #include <iostream> //iostream provides io.
 #include <vector>   //provides vector.
 #include <set>      //provides set.
+#include <algorithm>//provides sorting.
 
 using namespace std;
 
@@ -118,38 +119,26 @@ public:
 
 	iterator insert(T thing) {
 		//Determine if duplicate value as required by the set interface.
-		// iterator dupe(find(thing));
-
-		if (find(thing) == end()) {
-			return find(thing);
+		iterator e(this->end());
+		iterator found(this->find(thing));
+		if (found != e) {
+			return found;
 		}
 
-		// iterator start(this->begin());
-		// iterator end(this->end());
-
-		// //If nothing is in the set, can't 
-		// if (start != end) {
-		// 	--end;
-		// }
-		// bool dupe = false;
-		// while (start != end) {
-		// 	if (thing == *end) {
-		// 		dupe = true;
-		// 		break;
-		// 	}
-		// 	start++;
-		// }
-		// if (dupe == true) {
-		// 	return start;
-		// }
+		//If not duplicate, then push to storage.
 		storage_vector.push_back(thing);
 		eos++;
+
+		//Sort the storage because a set is sorted. 
+		sort(storage_vector.begin(), storage_vector.end());
 	}
 
 	iterator find(T thing) {
+		if (eos == 0) {
+			return this->end();
+		}
 		iterator start(this->begin());
 		iterator end(this->end());
-		--end;
 		bool dupe = false;
 		while (start != end) {
 			if (thing == *start) {
@@ -159,7 +148,6 @@ public:
 			start++;
 		}
 		if (dupe == true) {
-			cout << "Found " << thing << " at " << *end << endl;
 			return start;
 		}
 		return end;
@@ -206,9 +194,9 @@ int main(void) {
 	s2.insert("duplicate");
 	s2.insert("duplicate"); 
 
-	set<string>::iterator found2(s2.find("duplicate"));
+	// set<string>::iterator found2(s2.find("duplicate"));
 
-	cout << "Dupe: " << *found2 << endl;
+	// cout << "Dupe: " << *found2 << endl;
 
 	set<string>::iterator start2(s2.begin());
 	set<string>::iterator end2(s2.end());
