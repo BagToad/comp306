@@ -23,7 +23,7 @@
 /*
  TEST PLAN
 
- 
+
 This program compares custom implementations of insert(), erase(),
 size(), and find() in Set to standard implementations in std::set.
 
@@ -227,7 +227,7 @@ public:
 	void erase(T thing) {
 		//Determine if value is in set.
 		//(This is redundant, could just use std vector iterator. This
-		// demonstrates that the custom build iterator works as well).
+		// demonstrates that the custom build iterator works).
 		iterator e(this->end());
 		iterator found(this->find(thing));
 		if (found == e) {
