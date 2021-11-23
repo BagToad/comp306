@@ -1,7 +1,7 @@
 /* 
  Title: TMA4Question2.cpp
  Description:
-  
+ 	Create an inheritance hieararchy for different rodent types.
  Date: Nov 18, 2021
  Author: Kynan Ware
  Student ID: 3431123
@@ -19,11 +19,54 @@
 /*
  TEST PLAN
  
- Discussion:
-	
-   The program returns an int as per the C++ standard.
+===Rodent #1 Characteristics===
+Species: Hamster
+Tail length: Stubby
+===Rodent #2 Characteristics===
+Species: Mouse
+Tail length: long
+===Rodent #3 Characteristics===
+Species: Gerbil
+Tail length: long
+===Rodent #4 Characteristics===
+Species: Hamster
+Tail length: Stubby
+===Rodent #5 Characteristics===
+Species: Mouse
+Tail length: long
+===Rodent #6 Characteristics===
+Species: Gerbil
+Tail length: long
+===Rodent #7 Characteristics===
+Species: Hamster
+Tail length: Stubby
+===Rodent #8 Characteristics===
+Species: Mouse
+Tail length: long
+===Rodent #9 Characteristics===
+Species: Gerbil
+Tail length: long
+===Rodent #10 Characteristics===
+Species: Hamster
+Tail length: Stubby
 
-   All testing performed in a Linux environment with g++ version 7.5.0.
+ 
+ Discussion:
+	This program implements an inheritance hierarchy for the parent class Rodent, and
+	the subclasses Mouse, Gerbil, and Hamster. 
+
+	An array of 10 Rodents is create and filled with different Rodent types. The types 
+	of Rodents are cycled as they are put into the array to ensure variety. 
+
+	By having the Rodents in an array, the different Rodent subclasses are upcast
+	into Rodents. This is demonstrated by the fact that, for example, Hamster fits
+	into an array of Rodents.
+
+	Additionally, the Rodent class is purely abstract. The class features only virtual
+	functions.
+	
+	The program returns an int as per the C++ standard.
+	All testing performed in a Linux environment with g++ version 7.5.0.
 */
 
 #include <iostream> //iostream provides io.

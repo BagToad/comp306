@@ -1,7 +1,7 @@
 /* 
  Title: TMA4Question3.cpp
  Description:
-  
+  Implement and test a custom set template class, which includes iterators.
  Date: Nov 18, 2021
  Author: Kynan Ware
  Student ID: 3431123
@@ -44,13 +44,9 @@
  	iterate through the vector. I also considered whether there was a way to convert my
  	Set::iterator to a vector::iterator, but I did not find a way to do that. Perhaps that would
  	have been the optimal solution.
-1
- 	This find(x) function demonstrates that the custom Set::iterator is working 
- 	correctly by iterating through objects until the desired object is found.
 	
-   The program returns an int as per the C++ standard.
-
-   All testing performed in a Linux environment with g++ version 7.5.0.
+	The program returns an int as per the C++ standard.
+	All testing performed in a Linux environment with g++ version 7.5.0.
 */
 
 #include <iostream> //iostream provides io.
@@ -63,6 +59,12 @@ using namespace std;
 /*
 	Template class to implement a generic Set class.
 	Behaves similarly to the standard C++ library set. 
+
+	Template class & iterator implementation derived from:
+
+	Eckel, Bruce. Thinking in C++: Introduction to Standard C++, 
+	Volume 1. Available from: VitalSource Bookshelf,
+	(2nd Edition). Pearson Learning Solutions, 2000.
 */
 template <class T>
 class Set {
@@ -206,6 +208,18 @@ public:
 
 
 int main(void) {
+
+	//Describe program and the tests performed.
+	cout << "\nThis program compares custom implementations of insert(), erase(),\n";
+	cout << "size(), and find() in Set to standard implementations in std::set.\n" << endl;
+
+	cout << "The following tests are performed, by type, on both implementations:\n";
+	cout << "	- Add three elements to set.\n";
+	cout << "	- Insert the same element twice (sets should no contain duplicates).\n";
+	cout << "	- Add, then subsequently delete an element.\n";
+	cout << "	- Attempt to delete an element that does not exist.\n";
+	cout << "	- Loop through the Set/set using iterators and print the values.\n";
+	cout << "	- Print the output of size() (show set/Set size).\n" << endl;
 
 	cout << "====START TEST STRING STORAGE IN CUSTOM SET====" << endl;
 	Set<string> s1;
