@@ -231,7 +231,7 @@ int main(void) {
 	//Test inserting multiple strings.
 	custom_string_set.insert("test1");
 	custom_string_set.insert("test2");
-	s1.insert("test3");
+	custom_string_set.insert("test3");
 
 	//Duplicate should only be added once. 
 	custom_string_set.insert("duplicate");
@@ -282,7 +282,7 @@ int main(void) {
 	set<string>::iterator standard_string_start(standard_string_set.begin());
 	set<string>::iterator standard_string_end(standard_string_set.end());
 
-	while (standard_string_start != end) {
+	while (standard_string_start != standard_string_end) {
 		cout << *standard_string_start << endl;
 		standard_string_start++;
 	}
