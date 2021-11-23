@@ -117,6 +117,7 @@ public:
 		return eos;
 	}
 
+	//Insert element into storage if element doesn't already exist.
 	iterator insert(T thing) {
 		//Determine if duplicate value as required by the set interface.
 		iterator e(this->end());
@@ -228,6 +229,14 @@ int main(void) {
 	//Duplicate should only be added once. 
 	s2.insert("duplicate");
 	s2.insert("duplicate"); 
+
+	//Test deleting.
+	s2.insert("Delete this!");
+	s2.erase("Delete this!");
+
+	//Test deleting something that doesn't exist.
+	s2.erase("Does not exist!");
+
 
 	//Print results using iterator.
 	set<string>::iterator start2(s2.begin());
