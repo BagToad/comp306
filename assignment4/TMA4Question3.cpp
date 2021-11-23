@@ -133,6 +133,33 @@ public:
 		sort(storage_vector.begin(), storage_vector.end());
 	}
 
+	//Find element, then erase it from storage.
+	void erase(T thing) {
+		//Determine if value is in set.
+		//(This is redundant, could just use std vector iterator. This
+		// demonstrates that the custom build iterator works as well).
+		iterator e(this->end());
+		iterator found(this->find(thing));
+		if (found == e) {
+			return;
+		}
+
+		//Remove from vector.
+		typename vector<T>::iterator v_start(storage_vector.begin());
+		typename vector<T>::iterator v_end(storage_vector.end());
+		while (v_start != v_end) {
+			if (*v_start == thing) {
+				break;
+			}
+			v_start++;
+		}
+		storage_vector.erase(v_start);
+		eos--;
+
+	}
+
+	//Find element in storage. 
+	//Return iterator pointing to element in storage.
 	iterator find(T thing) {
 		if (eos == 0) {
 			return this->end();
@@ -157,7 +184,7 @@ public:
 
 int main(void) {
 
-	cout << "====TEST STRING STORAGE IN CUSTOM SET====" << endl;
+	cout << "====START TEST STRING STORAGE IN CUSTOM SET====" << endl;
 	Set<string> s1;
 
 	//Test inserting multiple strings.
@@ -169,10 +196,14 @@ int main(void) {
 	s1.insert("duplicate");
 	s1.insert("duplicate"); 
 
-	Set<string>::iterator found(s1.find("duplicate"));
+	//Test deleting.
+	s1.insert("Delete this!");
+	s1.erase("Delete this!");
 
-	cout << "Dupe: " << *found << endl;
+	//Test deleting something that doesn't exist.
+	s1.erase("Does not exist!");
 
+	//Print results using iterator.
 	Set<string>::iterator start(s1.begin());
 	Set<string>::iterator end(s1.end());
 
@@ -181,8 +212,12 @@ int main(void) {
 		start++;
 	}
 
+	//Print set size. 
+	cout << "Set size: " << s1.size() << endl;
 
-	cout << "====TEST STRING STORAGE IN STD SET====" << endl;
+	cout << "====END TEST STRING STORAGE IN CUSTOM SET====\n" << endl;
+
+	cout << "====START TEST STRING STORAGE IN STD SET====" << endl;
 	set<string> s2;
 
 	//Test inserting multiple strings.
@@ -194,10 +229,7 @@ int main(void) {
 	s2.insert("duplicate");
 	s2.insert("duplicate"); 
 
-	// set<string>::iterator found2(s2.find("duplicate"));
-
-	// cout << "Dupe: " << *found2 << endl;
-
+	//Print results using iterator.
 	set<string>::iterator start2(s2.begin());
 	set<string>::iterator end2(s2.end());
 
@@ -205,6 +237,11 @@ int main(void) {
 		cout << *start2 << endl;
 		start2++;
 	}
+
+	//Print size
+	cout << "Set size: " << s2.size() << endl;
+
+	cout << "====END TEST STRING STORAGE IN STD SET====\n" << endl;
 
 	return 0;
 }
