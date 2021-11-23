@@ -358,9 +358,6 @@ int main(void) {
 
 	cout << "====END TEST INT STORAGE IN STD SET====\n" << endl;
 
-
-
-
 	cout << "====START TEST DOUBLE STORAGE IN CUSTOM SET====" << endl;
 	Set<double> custom_double_set;
 
