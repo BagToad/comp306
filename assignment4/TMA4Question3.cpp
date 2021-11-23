@@ -20,9 +20,33 @@
  TEST PLAN
  
  Discussion:
-	The program loads two double arrays with 10,000 values. The values 
-	are multiplied by eachother, then printed. The execution time of 
-	the program is printed, then the program exits.
+ 	This program implements a custom set that mimics the behaviour of the std set. 
+ 	However, the standard set includes many class members and functions; not all of 
+ 	these members and functions were implemented in the custom set.
+
+ 	The custom set implementation includes: find(x), insert(x), erase(x), size()
+ 	begin(), and end().
+
+ 	The underlying implementation of Set is using a vector to store and retrieve
+ 	objects. Naturally, some functionality is different between a vector and a set.
+ 	For example, a set is sorted and a vector is not, therefore, the Set must sort 
+ 	the objects each time one is added during insert(x).
+
+ 	I tried to use native implementations as little as possible to demonstrate that the
+ 	custom Set class is capable of functioning properly. For example, the erase(x) function
+ 	calls Set::find(), which is a custom function. This returns a Set::Iterator, but a
+ 	vector::iterator is required to execute vector.erase(x). So, if the element is found
+ 	in the set using Set::find(), the erase() function iterates again - this time 
+ 	through the the vector using vector::iterator to find the vector::iterator
+ 	required for a call to vector::erase(). Again, this is mainly to prove that the find(x)
+ 	implementation and iterator implementation works properly to iterate through the set. If
+ 	there was a concern for efficiency I would remove the call to Set::find(x), and only have
+ 	iterate through the vector. I also considered whether there was a way to convert my
+ 	Set::iterator to a vector::iterator, but I did not find a way to do that. Perhaps that would
+ 	have been the optimal solution.
+1
+ 	This find(x) function demonstrates that the custom Set::iterator is working 
+ 	correctly by iterating through objects until the desired object is found.
 	
    The program returns an int as per the C++ standard.
 
@@ -35,7 +59,6 @@
 #include <algorithm>//provides sorting.
 
 using namespace std;
-
 
 /*
 	Template class to implement a generic Set class.
@@ -125,7 +148,6 @@ public:
 		if (found != e) {
 			return found;
 		}
-
 		//If not duplicate, then push to storage.
 		storage_vector.push_back(thing);
 		eos++;
@@ -251,6 +273,72 @@ int main(void) {
 	cout << "Set size: " << s2.size() << endl;
 
 	cout << "====END TEST STRING STORAGE IN STD SET====\n" << endl;
+
+	cout << "====START TEST INT STORAGE IN CUSTOM SET====" << endl;
+	Set<int> custom_int_set;
+
+	//Test inserting multiple strings.
+	custom_int_set.insert(1);
+	custom_int_set.insert(1000);
+	custom_int_set.insert(565656);
+
+	//Duplicate should only be added once. 
+	custom_int_set.insert(2468);
+	custom_int_set.insert(2468); 
+
+	//Test deleting.
+	custom_int_set.insert(5544);
+	custom_int_set.erase(5544);
+
+	//Test deleting something that doesn't exist.
+	custom_int_set.erase(7777777);
+
+	//Print results using iterator.
+	Set<int>::iterator custom_int_start(custom_int_set.begin());
+	Set<int>::iterator custom_int_end(custom_int_set.end());
+
+	while (custom_int_start != custom_int_end) {
+		cout << *custom_int_start << endl;
+		custom_int_start++;
+	}
+
+	//Print set size. 
+	cout << "Set size: " << custom_int_set.size() << endl;
+
+	cout << "====END TEST INT STORAGE IN CUSTOM SET====\n" << endl;
+
+	cout << "====START TEST INT STORAGE IN STD SET====" << endl;
+	set<int> standard_int_set;
+
+	//Test inserting multiple strings.
+	standard_int_set.insert(1);
+	standard_int_set.insert(1000);
+	standard_int_set.insert(565656);
+
+	//Duplicate should only be added once. 
+	standard_int_set.insert(2468);
+	standard_int_set.insert(2468); 
+
+	//Test deleting.
+	standard_int_set.insert(5544);
+	standard_int_set.erase(5544);
+
+	//Test deleting something that doesn't exist.
+	standard_int_set.erase(7777777);
+
+	//Print results using iterator.
+	set<int>::iterator standard_int_start(standard_int_set.begin());
+	set<int>::iterator standard_int_end(standard_int_set.end());
+
+	while (standard_int_start != standard_int_end) {
+		cout << *standard_int_start << endl;
+		standard_int_start++;
+	}
+
+	//Print set size. 
+	cout << "Set size: " << standard_int_set.size() << endl;
+
+	cout << "====END TEST INT STORAGE IN STD SET====\n" << endl;
 
 	return 0;
 }
