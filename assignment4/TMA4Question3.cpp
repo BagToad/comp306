@@ -61,9 +61,11 @@ public:
 		//Create an instance of iterator pointing to first element in Set.
 		iterator(Set& s) : s(s), index(0) {}
 
-		//Create an instance of iterator pointing to last element in set. 
+		//Create an instance of iterator pointing to last element in Set. 
 		iterator(Set& s, bool b) : s(s), index(s.eos) {}
 
+		//Return the object stored in vector storage. Act like 
+		//dereferencing a pointer. 
 		T operator*() {
 			return s.storage_vector[index];
 		}
@@ -99,48 +101,89 @@ public:
 		}
 	};
 
+	//Return an iterator pointing to the first object in Set.
 	iterator begin() {
 		return iterator(*this);
 	}
 
+	//Return an iterator pointing to the last object in Set.
 	iterator end() {
 		return iterator(*this, true);
 	}
 
+	//Return the number of objects in the set.
+	int size() {
+		return eos;
+	}
+
 	iterator insert(T thing) {
 		//Determine if duplicate value as required by the set interface.
+		// iterator dupe(find(thing));
+
+		if (find(thing) == end()) {
+			return find(thing);
+		}
+
+		// iterator start(this->begin());
+		// iterator end(this->end());
+
+		// //If nothing is in the set, can't 
+		// if (start != end) {
+		// 	--end;
+		// }
+		// bool dupe = false;
+		// while (start != end) {
+		// 	if (thing == *end) {
+		// 		dupe = true;
+		// 		break;
+		// 	}
+		// 	start++;
+		// }
+		// if (dupe == true) {
+		// 	return start;
+		// }
+		storage_vector.push_back(thing);
+		eos++;
+	}
+
+	iterator find(T thing) {
 		iterator start(this->begin());
 		iterator end(this->end());
-
-		//If nothing is in the set, can't 
-		if (start != end) {
-			--end;
-		}
+		--end;
 		bool dupe = false;
 		while (start != end) {
-			if (thing == *end) {
+			if (thing == *start) {
 				dupe = true;
 				break;
 			}
 			start++;
 		}
 		if (dupe == true) {
+			cout << "Found " << thing << " at " << *end << endl;
 			return start;
 		}
-		storage_vector.push_back(thing);
-		eos++;
-	} 
+		return end;
+	}
 };
 
 
 int main(void) {
+
+	cout << "====TEST STRING STORAGE IN CUSTOM SET====" << endl;
 	Set<string> s1;
 
-	s1.insert("Test");
+	//Test inserting multiple strings.
+	s1.insert("test1");
 	s1.insert("test2");
 	s1.insert("test3");
+
+	//Duplicate should only be added once. 
 	s1.insert("duplicate");
-	Set<string>::iterator dupe = s1.insert("duplicate");
+	s1.insert("duplicate"); 
+
+	Set<string>::iterator found(s1.find("duplicate"));
+
+	cout << "Dupe: " << *found << endl;
 
 	Set<string>::iterator start(s1.begin());
 	Set<string>::iterator end(s1.end());
@@ -148,6 +191,31 @@ int main(void) {
 	while (start != end) {
 		cout << *start << endl;
 		start++;
+	}
+
+
+	cout << "====TEST STRING STORAGE IN STD SET====" << endl;
+	set<string> s2;
+
+	//Test inserting multiple strings.
+	s2.insert("test1");
+	s2.insert("test2");
+	s2.insert("test3");
+
+	//Duplicate should only be added once. 
+	s2.insert("duplicate");
+	s2.insert("duplicate"); 
+
+	set<string>::iterator found2(s2.find("duplicate"));
+
+	cout << "Dupe: " << *found2 << endl;
+
+	set<string>::iterator start2(s2.begin());
+	set<string>::iterator end2(s2.end());
+
+	while (start2 != end2) {
+		cout << *start2 << endl;
+		start2++;
 	}
 
 	return 0;
