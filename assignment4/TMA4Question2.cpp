@@ -9,46 +9,41 @@
  Execution: ./TMA4Question2.exe
  
  Variables:
-
-
- Constants:
-
-
+ Rodent* - rodents[10] - an array of rodents. 
 */
 
 /*
- TEST PLAN
- 
-===Rodent #1 Characteristics===
-Species: Hamster
-Tail length: Stubby
-===Rodent #2 Characteristics===
-Species: Mouse
-Tail length: long
-===Rodent #3 Characteristics===
-Species: Gerbil
-Tail length: long
-===Rodent #4 Characteristics===
-Species: Hamster
-Tail length: Stubby
-===Rodent #5 Characteristics===
-Species: Mouse
-Tail length: long
-===Rodent #6 Characteristics===
-Species: Gerbil
-Tail length: long
-===Rodent #7 Characteristics===
-Species: Hamster
-Tail length: Stubby
-===Rodent #8 Characteristics===
-Species: Mouse
-Tail length: long
-===Rodent #9 Characteristics===
-Species: Gerbil
-Tail length: long
-===Rodent #10 Characteristics===
-Species: Hamster
-Tail length: Stubby
+ TEST PLAN (static program, no input)
+	>===Rodent #1 Characteristics===
+	>Species: Hamster
+	>Tail length: Stubby
+	>===Rodent #2 Characteristics===
+	>Species: Mouse
+	>Tail length: long
+	>===Rodent #3 Characteristics===
+	>Species: Gerbil
+	>Tail length: long
+	>===Rodent #4 Characteristics===
+	>Species: Hamster
+	>Tail length: Stubby
+	>===Rodent #5 Characteristics===
+	>Species: Mouse
+	>Tail length: long
+	>===Rodent #6 Characteristics===
+	>Species: Gerbil
+	>Tail length: long
+	>===Rodent #7 Characteristics===
+	>Species: Hamster
+	>Tail length: Stubby
+	>===Rodent #8 Characteristics===
+	>Species: Mouse
+	>Tail length: long
+	>===Rodent #9 Characteristics===
+	>Species: Gerbil
+	>Tail length: long
+	>===Rodent #10 Characteristics===
+	>Species: Hamster
+	>Tail length: Stubby
 
  
  Discussion:

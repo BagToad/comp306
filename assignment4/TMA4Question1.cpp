@@ -10,11 +10,25 @@
  Execution: ./TMA4Question1.exe
  
  Variables:
-
+ int - Point.x - Stores a Point's x coordinate.
+ int - Point.y - Stores a Point's y coordinate. 
+ Point - Shape.bounds[4] - An array of four Points to store the vertices of the bounding box.
+ string - Shape.name - The name of the shape, set by inheriting class. 
+ Point - Circle.center - A Point representing the center of the Circle. 
+ int - Circle.radius - An integer representing the radius of the Circle. 
+ Point - Square.corners[4] - An array of four Points to store the vertices of the Square.
+ bool - Square.valid - A boolean representing if the Square is valid.
+ Point - Triangle.corners[3] - An array of three Points to store the vertices of the Triangle.
+ bool - Triangle.valid - A boolean representing if the Triangle is valid. 
 
  Constants:
+ int - Shape.pi - The value of pi (3.141592).
 
-
+ Classes:
+ Shape - An abstract class representing a shape, with a bounding box.
+ Square : Shape - A concrete class representing a Square.
+ Circle : Shape - A concrete class representing a Circle.
+ Triangle : Shape - A concrete class representing a Triangle.  
 */
 
 /*

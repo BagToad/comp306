@@ -9,10 +9,14 @@
  Execution: ./TMA4Question3.exe
  
  Variables:
+ int - Set<T>.eos - An integer reprenting the "end of set". Used to create the end sentinel interator.
+ vector - Set<T>.storage_vector - A vector used as the underlying implementation for Set.
+ Set& - Set<T>::iterator.s - A reference to the set for which the iterator operates on.
+ int - Set<T>::iterator.index - An integer representing the current index of the iterator. 
 
-
- Constants:
-
+ Classes:
+ Set<T> - A custom implementation of std::set.
+ Set<T>::iterator - A custom implementation of std::set::iterator.
 
 */
 
@@ -222,69 +226,69 @@ int main(void) {
 	cout << "	- Print the output of size() (show set/Set size).\n" << endl;
 
 	cout << "====START TEST STRING STORAGE IN CUSTOM SET====" << endl;
-	Set<string> s1;
+	Set<string> custom_string_set;
 
 	//Test inserting multiple strings.
-	s1.insert("test1");
-	s1.insert("test2");
+	custom_string_set.insert("test1");
+	custom_string_set.insert("test2");
 	s1.insert("test3");
 
 	//Duplicate should only be added once. 
-	s1.insert("duplicate");
-	s1.insert("duplicate"); 
+	custom_string_set.insert("duplicate");
+	custom_string_set.insert("duplicate"); 
 
 	//Test deleting.
-	s1.insert("Delete this!");
-	s1.erase("Delete this!");
+	custom_string_set.insert("Delete this!");
+	custom_string_set.erase("Delete this!");
 
 	//Test deleting something that doesn't exist.
-	s1.erase("Does not exist!");
+	custom_string_set.erase("Does not exist!");
 
 	//Print results using iterator.
-	Set<string>::iterator start(s1.begin());
-	Set<string>::iterator end(s1.end());
+	Set<string>::iterator custom_string_start(custom_string_set.begin());
+	Set<string>::iterator custom_string_end(custom_string_set.end());
 
-	while (start != end) {
-		cout << *start << endl;
-		start++;
+	while (custom_string_start != custom_string_end) {
+		cout << *custom_string_start << endl;
+		custom_string_start++;
 	}
 
 	//Print set size. 
-	cout << "Set size: " << s1.size() << endl;
+	cout << "Set size: " << custom_string_set.size() << endl;
 
 	cout << "====END TEST STRING STORAGE IN CUSTOM SET====\n" << endl;
 
 	cout << "====START TEST STRING STORAGE IN STD SET====" << endl;
-	set<string> s2;
+	set<string> standard_string_set;
 
 	//Test inserting multiple strings.
-	s2.insert("test1");
-	s2.insert("test2");
-	s2.insert("test3");
+	standard_string_set.insert("test1");
+	standard_string_set.insert("test2");
+	standard_string_set.insert("test3");
 
 	//Duplicate should only be added once. 
-	s2.insert("duplicate");
-	s2.insert("duplicate"); 
+	standard_string_set.insert("duplicate");
+	standard_string_set.insert("duplicate"); 
 
 	//Test deleting.
-	s2.insert("Delete this!");
-	s2.erase("Delete this!");
+	standard_string_set.insert("Delete this!");
+	standard_string_set.erase("Delete this!");
 
 	//Test deleting something that doesn't exist.
-	s2.erase("Does not exist!");
+	standard_string_set.erase("Does not exist!");
 
 
 	//Print results using iterator.
-	set<string>::iterator start2(s2.begin());
-	set<string>::iterator end2(s2.end());
+	set<string>::iterator standard_string_start(standard_string_set.begin());
+	set<string>::iterator standard_string_end(standard_string_set.end());
 
-	while (start2 != end2) {
-		cout << *start2 << endl;
-		start2++;
+	while (standard_string_start != end) {
+		cout << *standard_string_start << endl;
+		standard_string_start++;
 	}
 
 	//Print size
-	cout << "Set size: " << s2.size() << endl;
+	cout << "Set size: " << standard_string_set.size() << endl;
 
 	cout << "====END TEST STRING STORAGE IN STD SET====\n" << endl;
 
@@ -353,6 +357,76 @@ int main(void) {
 	cout << "Set size: " << standard_int_set.size() << endl;
 
 	cout << "====END TEST INT STORAGE IN STD SET====\n" << endl;
+
+
+
+
+	cout << "====START TEST DOUBLE STORAGE IN CUSTOM SET====" << endl;
+	Set<double> custom_double_set;
+
+	//Test inserting multiple strings.
+	custom_double_set.insert(1.101);
+	custom_double_set.insert(5.05);
+	custom_double_set.insert(65215.05132);
+
+	//Duplicate should only be added once. 
+	custom_double_set.insert(5565.22);
+	custom_double_set.insert(5565.22); 
+
+	//Test deleting.
+	custom_double_set.insert(22.75);
+	custom_double_set.erase(22.75);
+
+	//Test deleting something that doesn't exist.
+	custom_double_set.erase(88888.888);
+
+	//Print results using iterator.
+	Set<double>::iterator custom_double_start(custom_double_set.begin());
+	Set<double>::iterator custom_double_end(custom_double_set.end());
+
+	while (custom_double_start != custom_double_end) {
+		cout << *custom_double_start << endl;
+		custom_double_start++;
+	}
+
+	//Print set size. 
+	cout << "Set size: " << custom_double_set.size() << endl;
+
+	cout << "====END TEST double STORAGE IN CUSTOM SET====\n" << endl;
+
+	cout << "====START TEST double STORAGE IN STD SET====" << endl;
+	set<double> standard_double_set;
+
+	//Test inserting multiple strings.
+	standard_double_set.insert(1);
+	standard_double_set.insert(1000);
+	standard_double_set.insert(565656);
+
+	//Duplicate should only be added once. 
+	standard_double_set.insert(2468);
+	standard_double_set.insert(2468); 
+
+	//Test deleting.
+	standard_double_set.insert(5544);
+	standard_double_set.erase(5544);
+
+	//Test deleting something that doesn't exist.
+	standard_double_set.erase(7777777);
+
+	//Print results using iterator.
+	set<double>::iterator standard_double_start(standard_double_set.begin());
+	set<double>::iterator standard_double_end(standard_double_set.end());
+
+	while (standard_double_start != standard_double_end) {
+		cout << *standard_double_start << endl;
+		standard_double_start++;
+	}
+
+	//Print set size. 
+	cout << "Set size: " << standard_double_set.size() << endl;
+
+	cout << "====END TEST DOUBLE STORAGE IN STD SET====\n" << endl;
+
 
 	return 0;
 }
