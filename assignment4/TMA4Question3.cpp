@@ -111,20 +111,22 @@ public:
 		//Determine if duplicate value as required by the set interface.
 		iterator start(this->begin());
 		iterator end(this->end());
+
+		//If nothing is in the set, can't 
 		if (start != end) {
 			--end;
 		}
 		bool dupe = false;
 		while (start != end) {
-			if (*start == *end) {
+			if (thing == *end) {
 				dupe = true;
 				break;
 			}
 			start++;
 		}
-		// if (dupe == true) {
-		// 	return start;
-		// }
+		if (dupe == true) {
+			return start;
+		}
 		storage_vector.push_back(thing);
 		eos++;
 	} 
@@ -137,6 +139,8 @@ int main(void) {
 	s1.insert("Test");
 	s1.insert("test2");
 	s1.insert("test3");
+	s1.insert("duplicate");
+	s1.insert("duplicate");
 
 	Set<string>::iterator start(s1.begin());
 	Set<string>::iterator end(s1.end());
