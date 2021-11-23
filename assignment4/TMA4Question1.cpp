@@ -223,7 +223,7 @@ private:
 	Point bounds [4];
 	string name; 
 protected:
-	const double PI = 3.141592;
+	const double pi = 3.141592;
 
 	//Set the shape's bounding box.
 	bool setBounds(Point points[4]) {
@@ -280,12 +280,12 @@ public:
 
 	//Return the area of the Circle.
 	double area() {
-		return PI * pow(radius, 2);
+		return pi * pow(radius, 2);
 	}
 
 	//Return the circumference of the circle.
 	double circumference() {
-		return 2 * PI * radius;
+		return 2 * pi * radius;
 	}
 	void display() {
 		Shape::display();
