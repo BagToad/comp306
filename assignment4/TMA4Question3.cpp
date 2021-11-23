@@ -140,7 +140,7 @@ int main(void) {
 	s1.insert("test2");
 	s1.insert("test3");
 	s1.insert("duplicate");
-	s1.insert("duplicate");
+	Set<string>::iterator dupe = s1.insert("duplicate");
 
 	Set<string>::iterator start(s1.begin());
 	Set<string>::iterator end(s1.end());
