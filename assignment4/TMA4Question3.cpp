@@ -21,67 +21,66 @@
 */
 
 /*
- TEST PLAN
+ TEST PLAN (Static program, no input)
 
-
-This program compares custom implementations of insert(), erase(),
-size(), and find() in Set to standard implementations in std::set.
-
-The following tests are performed, by type, on both implementations:
-	- Add three elements to set.
-	- Insert the same element twice (sets should no contain duplicates).
-	- Add, then subsequently delete an element.
-	- Attempt to delete an element that does not exist.
-	- Loop through the Set/set using iterators and print the values.
-	- Print the output of size() (show set/Set size).
-
-====START TEST STRING STORAGE IN CUSTOM SET====
-duplicate
-test1
-test2
-test3
-Set size: 4
-====END TEST STRING STORAGE IN CUSTOM SET====
-
-====START TEST STRING STORAGE IN STD SET====
-duplicate
-test1
-test2
-test3
-Set size: 4
-====END TEST STRING STORAGE IN STD SET====
-
-====START TEST INT STORAGE IN CUSTOM SET====
-1
-1000
-2468
-565656
-Set size: 4
-====END TEST INT STORAGE IN CUSTOM SET====
-
-====START TEST INT STORAGE IN STD SET====
-1
-1000
-2468
-565656
-Set size: 4
-====END TEST INT STORAGE IN STD SET====
-
-====START TEST DOUBLE STORAGE IN CUSTOM SET====
-1.101
-5.05
-5565.22
-65215.1
-Set size: 4
-====END TEST double STORAGE IN CUSTOM SET====
-
-====START TEST double STORAGE IN STD SET====
-1
-1000
-2468
-565656
-Set size: 4
-====END TEST DOUBLE STORAGE IN STD SET====
+	>This program compares custom implementations of insert(), erase(),
+	>size(), and find() in Set to standard implementations in std::set.
+	>
+	>The following tests are performed, by type, on both implementations:
+	>	- Add three elements to set.
+	>	- Insert the same element twice (sets should no contain duplicates).
+	>	- Add, then subsequently delete an element.
+	>	- Attempt to delete an element that does not exist.
+	>	- Loop through the Set/set using iterators and print the values.
+	>	- Print the output of size() (show set/Set size).
+	>
+	>====START TEST STRING STORAGE IN CUSTOM SET====
+	>duplicate
+	>test1
+	>test2
+	>test3
+	>Set size: 4
+	>====END TEST STRING STORAGE IN CUSTOM SET====
+	>
+	>====START TEST STRING STORAGE IN STD SET====
+	>duplicate
+	>test1
+	>test2
+	>test3
+	>Set size: 4
+	>====END TEST STRING STORAGE IN STD SET====
+	>
+	>====START TEST INT STORAGE IN CUSTOM SET====
+	>1
+	>1000
+	>2468
+	>565656
+	>Set size: 4
+	>====END TEST INT STORAGE IN CUSTOM SET====
+	>
+	>====START TEST INT STORAGE IN STD SET====
+	>1
+	>1000
+	>2468
+	>565656
+	>Set size: 4
+	>====END TEST INT STORAGE IN STD SET====
+	>
+	>====START TEST DOUBLE STORAGE IN CUSTOM SET====
+	>1.101
+	>5.05
+	>5565.22
+	>65215.1
+	>Set size: 4
+	>====END TEST double STORAGE IN CUSTOM SET====
+	>
+	>====START TEST double STORAGE IN STD SET====
+	>1
+	>1000
+	>2468
+	>565656
+	>Set size: 4
+	>====END TEST DOUBLE STORAGE IN STD SET====
 
  
  Discussion:
