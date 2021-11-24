@@ -2,7 +2,7 @@
  Title: TMA4Question2.cpp
  Description:
  	Create an inheritance hieararchy for different rodent types.
- Date: Nov 18, 2021
+ Date: Nov 23, 2021
  Author: Kynan Ware
  Student ID: 3431123
  Compile: g++ TMA4Question2.cpp -o TMA4Question2.exe

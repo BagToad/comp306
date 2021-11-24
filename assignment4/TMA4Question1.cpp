@@ -3,7 +3,7 @@
  Description:
  	Implement a class hierarchy of shapes using a abstract base shape class. 
   
- Date: Nov 20, 2021
+ Date: Nov 23, 2021
  Author: Kynan Ware
  Student ID: 3431123
  Compile: g++ TMA4Question1.cpp -o TMA4Question1.exe
