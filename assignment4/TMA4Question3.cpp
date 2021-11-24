@@ -109,7 +109,19 @@ Set size: 4
  	iterate through the vector. I also considered whether there was a way to convert my
  	Set::iterator to a vector::iterator, but I did not find a way to do that. Perhaps that would
  	have been the optimal solution.
-	
+
+ 	It appears that the std set does not have the += or -= operators, so I did not implement those
+ 	in my custom implementation either. All I could find online and in my testing was that
+ 	++, --, ==, !=, and *, are the supported operators. The following code demonstrates that the
+ 	+= operator is not implemented in the standard set (assumes using namespace std):
+
+ 		set<int> test_set;
+		test_set.insert(1);
+		test_set.insert(2);
+		test_set.insert(3);
+		set<int>::iterator test_set_iterator(test_set.begin());
+		test_set_iterator += 1;
+		
 	The program returns an int as per the C++ standard.
 	All testing performed in a Linux environment with g++ version 7.5.0.
 */
@@ -484,7 +496,6 @@ int main(void) {
 	cout << "Set size: " << standard_double_set.size() << endl;
 
 	cout << "====END TEST DOUBLE STORAGE IN STD SET====\n" << endl;
-
 
 	return 0;
 }
