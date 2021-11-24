@@ -2,7 +2,6 @@
  Title: TMA4Question1.cpp
  Description:
  	Implement a class hierarchy of shapes using a abstract base shape class. 
-  
  Date: Nov 23, 2021
  Author: Kynan Ware
  Student ID: 3431123
